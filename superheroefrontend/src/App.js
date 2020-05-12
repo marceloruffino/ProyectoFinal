@@ -3,7 +3,7 @@ import React from 'react';
 import './App.css';
 import { Layout } from 'antd';
 import NavBar from './components/NavBar/NavBar'
-import Footer from './components/Footer/footer'
+import Footer from './components/Footer/Footer'
 import Home from "./pages/Home";
 import BookShop from "./pages/BookShop";
 import Merchandising from "./pages/Merchandising"
