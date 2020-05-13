@@ -27,6 +27,32 @@
 .App-link {
   color: #61dafb;
 }
+.TituloMerchFondo{
+  
+  background-color: #ffc1cc;
+}
+.TituloContenido{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.MerchFondo{
+  background-color: #ffc1cc;
+}
+.TituloContainer{
+  background-color: #ffc1cc;
+  font-family: monospace;
+  color: grey;
+  padding: 10px;
+}
+
+.CarouselMerch{
+background-color: #ffc1cc;
+  width: 340px;
+  padding: 20px;
+  margin: auto;
+  height: 340px;
+}
 
 @keyframes App-logo-spin {
   from {
