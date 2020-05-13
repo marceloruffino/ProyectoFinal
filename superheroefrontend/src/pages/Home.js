@@ -1,19 +1,38 @@
 //@ts-check
 import React from 'react';
-import { Layout } from 'antd';
+import CaruselFotos from '../components/Carrousel/Carousel';
+import TituloLogo from '../components/TituloLogo/TituloLogo';
+import TituloBookShop from '../components/TituloBookshop/TituloBookshop';
 
-const { Content } = Layout;
+
 
 function App() {
   return (
-    <Layout>
-<Content>
-    
-    <div >
+
+    <body>
+      <div className='TituloContainer'>
+        <div>
+          <TituloLogo />
+        </div>
+      </div>
+  <div>
+    <div className='MerchFondo'>
+      <div className='CarouselMerch'>
+        <CaruselFotos />
+      </div>
     </div>
-    </Content>
-    </Layout>
-  );
+  </div>
+
+  <div className='TituloContainer'>
+    <div>
+      <TituloBookShop />
+    </div>
+  </div>
+</body >
+
+
+);
+
 }
 
 export default App;
