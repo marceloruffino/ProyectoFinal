@@ -25,10 +25,10 @@ const TarjetaSchema = new Schema({
     type: String,
   },
   cantidad : {
-    type: String
+    type: Number,
   },
   precio: {
-    type: String,
+    type: Number,
   },
 });
 

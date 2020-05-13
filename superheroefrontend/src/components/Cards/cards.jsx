@@ -51,7 +51,7 @@ const Tarjeta = () => {
           description={respuesta.descripcion}
         />
         <p>Cantidad: {respuesta.cantidad}</p>
-        <p>Precio: {respuesta.precio}</p>
+        <p>Precio: ${respuesta.precio}</p>
       </Card>
 
 
