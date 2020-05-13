@@ -1,13 +1,14 @@
 
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: #def2fe;
 }
 
 .topnav a {
+  font-family: monospace;
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: grey;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -15,13 +16,14 @@
 }
 
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: #ffc1cc;
   color: black;
 }
 
 .topnav a.active {
-  background-color: #4CAF50;
+  background-color: #def2fe;
   color: white;
+
 }
 
 .topnav .icon {

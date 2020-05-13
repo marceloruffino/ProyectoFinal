@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
+import LogoBarra from './logo/superHeroLogoBarra.png'
 
 const menu = [
   {
@@ -38,7 +39,7 @@ export default function NavBar() {
   return (
     <div className={`topnav ${responsive ? "responsive" : ""}`} id="myTopnav">
       <Link to="/" className="active">
-        INSERT LOGO
+       <img src={LogoBarra} alt=""/>
       </Link>
       {menu.map(({ name, to }) => (
         <Link key={name} to={to}>

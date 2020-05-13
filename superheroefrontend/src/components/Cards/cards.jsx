@@ -29,35 +29,36 @@ const Tarjeta = () => {
 
   return (
 
+    <div className='CardsContainer'> {
 
-    respuestatarjeta.map((respuesta) => (
+      respuestatarjeta.map((respuesta) => (
 
-      <Card
-        style={{ width: 300 }}
-        cover={
-          <img
-            alt="example"
-            src={respuesta.imagen}
+        <Card
+
+          cover={
+            <img
+              alt="example"
+              src={respuesta.imagen}
+            />
+          }
+          actions={[
+            <InfoCircleOutlined />,
+            <InstagramOutlined />,
+            <FacebookOutlined />,
+          ]}
+        >
+          <Meta
+            title={respuesta.titulo}
+            description={respuesta.descripcion}
           />
-        }
-        actions={[
-          <InfoCircleOutlined />,
-          <InstagramOutlined />,
-          <FacebookOutlined />,
-        ]}
-      >
-        <Meta
-          title={respuesta.titulo}
-          description={respuesta.descripcion}
-        />
-        <p>Cantidad: {respuesta.cantidad}</p>
-        <p>Precio: ${respuesta.precio}</p>
-      </Card>
+          <p>Cantidad: {respuesta.cantidad}</p>
+          <p>Precio: ${respuesta.precio}</p>
+        </Card>
 
 
-    ))
-
-
+      ))
+    }
+    </div>
 
 
   );
