@@ -30,7 +30,12 @@ const menu = [
     name: "ADMINISTRAR",
     to: "/administrar",
   },
+  {
+    name: "ADMINREGISTROS",
+    to: "/adminregistros",
+  },
 ];
+
 
 export default function NavBar() {
   const [responsive, setResponsive] = useState(false);
