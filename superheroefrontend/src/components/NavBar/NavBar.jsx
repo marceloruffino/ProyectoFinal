@@ -17,10 +17,7 @@ const menu = [
     name: "MERCHANDISING",
     to: "/merchandising",
   },
-  {
-    name: "BOOKSHOP",
-    to: "/bookshop",
-  },
+  
   {
     name: "FANZINEZONE",
     to: "/fanzinezone",
