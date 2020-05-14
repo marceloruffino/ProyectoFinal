@@ -9,6 +9,7 @@ import BookShop from "./pages/BookShop";
 import Merchandising from "./pages/Merchandising"
 import FanzineZone from "./pages/FanzineZone"
 import Administrar from "./pages/Administrar";
+import Registrar from "./pages/Registrar";
 import {   
         BrowserRouter as Router,   
         Switch,   
@@ -27,8 +28,11 @@ const { Content } = Layout;
          <NavBar />
           </Content>      
         <Switch>
-        <Route path="/adminitrar">
+        <Route path="/administrar">
             <Administrar/>
+          </Route>
+          <Route path="/registrar">
+            <Registrar/>
           </Route>
         <Route path="/fanzinezone">
             <FanzineZone />

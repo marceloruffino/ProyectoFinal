@@ -23,6 +23,10 @@ const menu = [
     to: "/fanzinezone",
   },
   {
+    name: "REGISTRARSE",
+    to: "/registrar",
+  },
+  {
     name: "ADMINISTRAR",
     to: "/administrar",
   },
