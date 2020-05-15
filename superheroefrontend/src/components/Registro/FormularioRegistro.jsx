@@ -21,12 +21,8 @@ export default function FormularioRegistro() {
         setComponentSize(size);
     };        return (
             <div>
-                <div className='FormularioRegistro'>
-                    <div>
-                    <h3 className="text-center">
-            Registrarse
-            </h3>
-                    </div>
+                <div >
+                    
                     <div>
                         <Form
                             labelCol={{ span: 4 }}
@@ -54,7 +50,9 @@ export default function FormularioRegistro() {
                                     <Select.Option value="demo">Masculino</Select.Option>
                                     <Select.Option value="demo">Femenino</Select.Option>
                                     <Select.Option value="demo">No binario</Select.Option>
-                                    <Select.Option value="demo">Otro</Select.Option>
+                                    <Select.Option value="demo">Género Fluido</Select.Option>
+                                    <Select.Option value="demo">Vulcan</Select.Option>
+
                                 </Select>
                             </Form.Item>
                             <Form.Item label="Fecha de Nacimiento">

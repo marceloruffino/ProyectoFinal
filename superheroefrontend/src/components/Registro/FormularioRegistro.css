@@ -5,3 +5,16 @@
     color: grey;
     padding: 30px;
 }
+
+.TituloRegistro{
+    font-family: monospace;
+    color: grey;
+    display: flex;
+    justify-content: center;
+}
+
+.AvatarRegistro{
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+}

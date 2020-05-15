@@ -11,34 +11,38 @@ import FanzineZone from "./pages/FanzineZone"
 import Administrar from "./pages/Administrar";
 import Registrar from "./pages/Registrar";
 import AdminRegistros from "./pages/AdminRegistros";
-import {   
-        BrowserRouter as Router,   
-        Switch,   
-        Route,   
-        Link 
-        } from "react-router-dom";  
+import SingIn from "./pages/SingIn";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const { Content } = Layout;
 
-  
-  export default function App() {   
-    return (     
-    <Router>       
-      <div>         
-         <Content>
-         <NavBar />
-          </Content>      
+
+export default function App() {
+  return (
+    <Router>
+      <div>
+        <Content>
+          <NavBar />
+        </Content>
         <Switch>
-        <Route path="/adminregistros">
-            <AdminRegistros/>
+          <Route path="/singin">
+            <SingIn />
           </Route>
-        <Route path="/administrar">
-            <Administrar/>
+          <Route path="/adminregistros">
+            <AdminRegistros />
+          </Route>
+          <Route path="/administrar">
+            <Administrar />
           </Route>
           <Route path="/registrar">
-            <Registrar/>
+            <Registrar />
           </Route>
-        <Route path="/fanzinezone">
+          <Route path="/fanzinezone">
             <FanzineZone />
           </Route>
           <Route path="/merchandising">
@@ -50,12 +54,11 @@ const { Content } = Layout;
           <Route path="/">
             <Home />
           </Route>
-        </Switch>     
-    </div>     
-   <Content>
-     <Footer />
-   </Content>
-    </Router>   
-    ); 
-  } 
-    
+        </Switch>
+      </div>
+      <Content>
+        <Footer />
+      </Content>
+    </Router>
+  );
+}

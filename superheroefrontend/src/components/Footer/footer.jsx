@@ -1,55 +1,56 @@
 import React from 'react';
-import { Layout } from 'antd';
 import "./Footer.css";
 import { WeiboOutlined, TwitterOutlined, InstagramOutlined, FacebookOutlined } from '@ant-design/icons';
 
-const { Content } = Layout;
 
 export default function Footer() {
-  return (
-   <Content>
-           <body >
+    return (
 
-    <div className="footer-dark">
-        <footer>
-            <div className="footerAmarillo">
-                <div >
-                    <div className="col-sm-6 col-md-3 item">
-                        <h3>About</h3>
-                        <ul>
-                            <li><a href="#">Company</a></li>
-                            <li><a href="#">Team</a></li>
-                            <li><a href="#">Careers</a></li>
-                        </ul>
-                    </div>
-                    <div className="col-sm-6 col-md-3 item">
-                    <h3>About</h3>
-                        <ul>
-                            <li><a href="#">Company</a></li>
-                            <li><a href="#">Team</a></li>
-                            <li><a href="#">Careers</a></li>
-                        </ul>
+        <body>
+            <div class="footer-dark">
+                <footer>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-3 item">
+                                <h3>Servicios</h3>
+                                <ul>
+                                    <li><a href="#">Diseño Web</a></li>
+                                    <li><a href="#">Desarrollo</a></li>
+                                    <li><a href="#">Hosting</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6 col-md-3 item">
+                                <h3>Nosotros</h3>
+                                <ul>
+                                    <li><a href="#">Compañia</a></li>
+                                    <li><a href="#">Team</a></li>
+                                    <li><a href="#">Carrera</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6 item text">
+                                <h3>Super Heroe</h3>
+                                <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                            </div>
+                            <div class="col item social">
+                                <a href="#">
+                                <FacebookOutlined />
+                                </a>
+                                <a href="#">
+                                <InstagramOutlined />
+                                </a>
+                                <a href="#">
+                                <TwitterOutlined />
+                                </a>
+                                <a href="#">
+                                <WeiboOutlined />
+                                </a>
+                            </div>
                         </div>
-                    <div className="col item social">
-                        <a href="#">
-                            <i className="icon"><FacebookOutlined /></i>
-                        </a>
-                        <a href="#">
-                            <i className="icon"><InstagramOutlined /></i>
-                        </a>
-                        <a href="#">
-                        <i className="icon"><TwitterOutlined /></i>
-                        </a>
-                        <a href="#">
-                        <i className="icon"><WeiboOutlined /></i>
-                        </a>
+                        <p class="copyright">Super Heroe © 2020</p>
                     </div>
-                </div>
-                <p className="copyright">SuperHERO © 2020</p>
+                </footer>
             </div>
-        </footer>
-    </div>
-</body>
-   </Content>
-  );
+        </body>
+
+    );
 }
