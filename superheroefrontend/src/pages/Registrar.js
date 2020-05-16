@@ -13,7 +13,7 @@ function Registrar() {
     
     <div className='FormularioRegistro'>
       <h3 className='TituloRegistro'>
-            Registrarse
+            Registro para NewsLetters
             </h3>
                     <div className='AvatarRegistro'>
     <Avatar />

@@ -51,6 +51,7 @@ const Tarjeta = () => {
             title={respuesta.titulo}
             description={respuesta.descripcion}
           />
+          <br></br>
           <p>Cantidad: {respuesta.cantidad}</p>
           <p>Precio: ${respuesta.precio}</p>
         </Card>

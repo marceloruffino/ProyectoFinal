@@ -32,7 +32,7 @@ export default function FormularioRegistro() {
                             onValuesChange={onFormLayoutChange}
                             size={componentSize}
                         >
-                            <Form.Item label="TAMAÑO DEL FORM" name="size">
+                            <Form.Item label="TAMAÑO DEL FORM" name="size" >
                                 <Radio.Group>
                                     <Radio.Button value="small">Pequeño</Radio.Button>
                                     <Radio.Button value="middle">Mediano</Radio.Button>
@@ -45,18 +45,33 @@ export default function FormularioRegistro() {
                             <Form.Item label="Apellido">
                                 <Input />
                             </Form.Item>
-                            <Form.Item label="Sexo">
-                                <Select>
-                                    <Select.Option value="demo">Masculino</Select.Option>
-                                    <Select.Option value="demo">Femenino</Select.Option>
-                                    <Select.Option value="demo">No binario</Select.Option>
-                                    <Select.Option value="demo">Género Fluido</Select.Option>
-                                    <Select.Option value="demo">Vulcan</Select.Option>
+                            <Form.Item label="Sexo" >
+                                <Select >
+                                    <Select.Option value="demo" className='TextoSubmenu'>Masculino</Select.Option>
+                                    <Select.Option value="demo" className='TextoSubmenu'>Femenino</Select.Option>
+                                    <Select.Option value="demo" className='TextoSubmenu'>No binario</Select.Option>
+                                    <Select.Option value="demo" className='TextoSubmenu'>Género Fluido</Select.Option>
+                                    <Select.Option value="demo" className='TextoSubmenu'>Vulcan</Select.Option>
 
                                 </Select>
                             </Form.Item>
                             <Form.Item label="Fecha de Nacimiento">
                                 <DatePicker />
+                            </Form.Item>
+                            <Form.Item label="Direccion">
+                                <Input />
+                            </Form.Item>
+                            <Form.Item label="Provincia">
+                                <Input />
+                            </Form.Item>
+                            <Form.Item label="C.P">
+                                <Input />
+                            </Form.Item>
+                            <Form.Item label="Telefono">
+                                <Input />
+                            </Form.Item>
+                            <Form.Item label="Email">
+                                <Input />
                             </Form.Item>
                             <Form.Item label="Recibir Newsletters">
                                 <Switch />

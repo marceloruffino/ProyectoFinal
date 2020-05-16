@@ -36,16 +36,44 @@
   align-items: center;
   padding: 10px;
 }
-.MerchFondo{
-  background-color: #ffc1cc;
-}
-.TituloContainer{
+/* Pagina Home: Logo Pricipal y texto explicativo */
+.TituloPrincipal{
   background-color: #ffc1cc;
   font-family: monospace;
   color: black;
   padding: 10px;
 }
 
+/* Pagina Home: Titulo Bookshop y texto explicativo */
+.TituloBookshop{
+  background-color: #F8ED89;
+  font-family: monospace;
+  color: black;
+  padding: 10px;
+}
+/* Pagina Home: Contenido del container de  cards */
+.BookshopFondo{
+  background-color: #F8ED89;
+  font-family: monospace;
+  display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem;
+}
+
+
+/* Pagina Home: Titulo Merchandising */
+.TituloMerch{
+  background-color: #ffc1cc;
+  font-family: monospace;
+  color: black;
+  padding: 10px;
+}
+
+/* Pagina Home: Conteiner del carrousel de Merchandising */
+.MerchFondo{
+  background-color: #ffc1cc;
+}
+/* Pagina Home: Estilo del carousel */
 .CarouselMerch{
 background-color: #ffc1cc;
   width: 340px;
@@ -53,6 +81,17 @@ background-color: #ffc1cc;
   margin: auto;
   height: 340px;
 }
+
+/* Pagina Home: Titulo Fanzinezone y texto explicativo - 
+y Contenido de News */
+.TituloFanzineZone{
+  background-color: #def2fe;
+  font-family: monospace;
+  color: black;
+  padding: 10px;
+}
+
+
 
 @keyframes App-logo-spin {
   from {
