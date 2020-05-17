@@ -47,11 +47,11 @@ export default function FormularioRegistro() {
                             </Form.Item>
                             <Form.Item label="Sexo" >
                                 <Select >
-                                    <Select.Option value="demo" className='TextoSubmenu'>Masculino</Select.Option>
-                                    <Select.Option value="demo" className='TextoSubmenu'>Femenino</Select.Option>
-                                    <Select.Option value="demo" className='TextoSubmenu'>No binario</Select.Option>
-                                    <Select.Option value="demo" className='TextoSubmenu'>Género Fluido</Select.Option>
-                                    <Select.Option value="demo" className='TextoSubmenu'>Vulcan</Select.Option>
+                                    <Select.Option value="masculino" className='TextoSubmenu'>Masculino</Select.Option>
+                                    <Select.Option value="femenino" className='TextoSubmenu'>Femenino</Select.Option>
+                                    <Select.Option value="nobinario" className='TextoSubmenu'>No binario</Select.Option>
+                                    <Select.Option value="fluido" className='TextoSubmenu'>Género Fluido</Select.Option>
+                                    <Select.Option value="vulcan" className='TextoSubmenu'>Vulcan</Select.Option>
 
                                 </Select>
                             </Form.Item>

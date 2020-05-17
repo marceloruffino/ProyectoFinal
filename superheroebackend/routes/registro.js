@@ -52,13 +52,13 @@ const RegistroSchema = new Schema({
   newsLetter: {
     type: Boolean,
   },
-});
+},{timestamps:true});
 
 const RegistroModel = mongoose.model("registro", RegistroSchema);
 
 router.get("/", async (req, res) => {
   try {
-    const respuesta = await RegistroModel.find();
+    const respuesta = await RegistroModel.find().sort({createdAt: 'desc'});
     res.json({ mensaje: "registrado con exito", registro: respuesta });
   } catch (error) {
     res.status(500).json({ mensaje: "error", tipo: err });

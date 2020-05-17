@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'antd/dist/antd.css';
-import { Table, Input, Button, Space } from 'antd';
+import { Table, Input, Button, Space, Switch } from 'antd';
 import Highlighter from 'react-highlight-words';
 import { SearchOutlined } from '@ant-design/icons';
 
@@ -104,31 +104,31 @@ const TablaRegistro = () => {
     },
     {
       title: 'Apellido',
-      dataIndex: 'lastname',
-      key: 'lastname',
+      dataIndex: 'apellido',
+      key: 'apellido',
       width: '10%',
-      ...getColumnSearchProps('lastname'),
+      ...getColumnSearchProps('apellido'),
     },
     {
       title: 'Sexo',
-      dataIndex: 'sex',
-      key: 'sex',
+      dataIndex: 'sexo',
+      key: 'sexo',
       width: '10%',
-      ...getColumnSearchProps('sex'),
+      ...getColumnSearchProps('sexo'),
     },
     {
       title: 'Fecha.Nac',
-      dataIndex: 'age',
-      key: 'age',
+      dataIndex: 'fechaNacimiento',
+      key: 'fechaNacimiento',
       width: '10%',
-      ...getColumnSearchProps('age'),
+      ...getColumnSearchProps('fechaNacimiento'),
     },
     {
       title: 'Direccion',
-      dataIndex: 'address',
-      key: 'address',
+      dataIndex: 'direccion',
+      key: 'direccion',
       width: '30%',
-      ...getColumnSearchProps('address'),
+      ...getColumnSearchProps('direccion'),
     },
     {
       title: 'Provincia',
@@ -139,17 +139,17 @@ const TablaRegistro = () => {
     },
     {
       title: 'Cd. Postal',
-      dataIndex: 'cp',
-      key: 'cp',
+      dataIndex: 'codigoPostal',
+      key: 'codigoPostal',
       width: '10%',
-      ...getColumnSearchProps('cp'),
+      ...getColumnSearchProps('codigoPostal'),
     },
     {
       title: 'Telefono',
-      dataIndex: 'tel',
-      key: 'tel',
+      dataIndex: 'telefono',
+      key: 'telefono',
       width: '10%',
-      ...getColumnSearchProps('tel'),
+      ...getColumnSearchProps('telefono'),
     },
     {
       title: 'Email',
@@ -160,10 +160,16 @@ const TablaRegistro = () => {
     },
     {
       title: 'Newsletters',
-      dataIndex: 'news',
-      key: 'news',
+      dataIndex: 'newsLetter',
+      key: 'newsLetter',
       width: '10%',
-      ...getColumnSearchProps('news'),
+      render: (value) => {
+      
+    
+      return <Switch checked={value} />
+
+      },
+      
     },
 
 
