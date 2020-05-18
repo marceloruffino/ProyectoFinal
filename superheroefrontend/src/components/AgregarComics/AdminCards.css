@@ -12,6 +12,16 @@
   color: grey;
   padding: 10px;
 }
+.FormularioAgregar{
+
+  font-family: monospace;
+  background-color: #ffc1cc;
+  color: grey;
+  padding: 10px;
+  display: grid;
+  justify-content: center;
+  
+}
 
 .TituloAdministrar{
   background-color: #ffc1cc;

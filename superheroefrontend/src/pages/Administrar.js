@@ -6,6 +6,7 @@ import { Button } from 'antd';
 import { FileAddOutlined } from '@ant-design/icons';
 
 import { Link } from 'react-router-dom';
+import BotonCorazon from '../components/BotonCorazon/BotonCorazon';
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
     <div>
       <div className='TituloAdministrar'>
         <h2 >
-          Administrar Pagina
+          PANEL DE ADMINISTRACION
             </h2>
       </div>
       <div className='botonAgregar'>
@@ -25,11 +26,21 @@ function App() {
         </Link>
       </div>
       <div className='botonAgregar'>
+        <Link to="agregarcomics">
+          <Button shape="round" icon={<FileAddOutlined />} >
+            Modificar Comics
+            </Button>
+        </Link>
+      </div>
+      <div className='botonAgregar'>
         <Link to="adminregistros">
           <Button shape="round" icon={<FileAddOutlined />} >
             Administrar Registros
             </Button>
         </Link>
+      </div>
+      <div className='TituloAdministrar'>
+        <BotonCorazon />
       </div>
     </div>
   );

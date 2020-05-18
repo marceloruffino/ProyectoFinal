@@ -1,66 +1,123 @@
 //@ts-check
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 import './AdminCards.css'
-import { Button } from 'antd';
-import { RollbackOutlined } from '@ant-design/icons';
-import {
-    Form,
-    Input,
 
-} from 'antd';
-import { Link } from 'react-router-dom';
+export default function AddList() {
+  const [picture, setPicture] = useState("");
+  const [titulo, setTitulo] = useState("");
+  const [descripcion, setDescripcion] = useState(0);
+  const [cantidad, setCantidad] = useState(false);
+  const [precio, setPrecio] = useState(false);
+
+  const [loading, setLoading] = useState(false);
+  const [respuestaMensaje, setRespuestaMensaje] = useState("");
+
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      setLoading(true);
+      const payload = new FormData();
+      payload.append("imagen", picture);
+      payload.append("titulo", titulo.toString());
+      payload.append("descripcion", descripcion.toString());
+      payload.append("cantidad", cantidad.toString());
+      payload.append("precio", precio.toString());
 
 
-export default function AgregarTarjeta() {
-    const [componentSize, setComponentSize] = useState('small');
-    const onFormLayoutChange = ({ size }) => {
-        setComponentSize(size);
-    }; return (
-        <div >
-            <div className='TituloAdministrar'>
+
+
+
+
+      const response = await axios.post(
+        'http://localhost:3000/tarjeta/',
+        payload
+      );
+      setRespuestaMensaje(response.data.mensaje);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handlePicture = (e) => {
+    setPicture(e.target.files[0]);
+  };
+
+  const imageURL = picture && URL.createObjectURL(picture);
+
+  return (
+    <div>
+       <div className='TituloAdministrar'>
                 <h2>
                     Agregar Comics
                 </h2>
             </div>
-            <div className='FormularioRegistro'>
-                <Form
-                    labelCol={{ span: 4 }}
-                    wrapperCol={{ span: 14 }}
-                    layout="horizontal"
-                    initialValues={{ size: componentSize }}
-                    onValuesChange={onFormLayoutChange}
-                    size={componentSize}
-                >
+            <div>
 
-                    <Form.Item label="Imagen">
-                        <Input />
-                    </Form.Item>
-                    <Form.Item label="Titulo">
-                        <Input />
-                    </Form.Item>
-                    <Form.Item label="Descripcion">
-                        <Input />
-                    </Form.Item>
-                    <Form.Item label="Cantidad">
-                        <Input />
-                    </Form.Item>
-                    <Form.Item label="Precio">
-                        <Input />
-                    </Form.Item>
-
-                </Form>
-                <div className='botonAgregar'>
-                    <div>
-        <Link to="administrar">
-          <Button shape="round" icon={<RollbackOutlined />} >
-            Volver
-            </Button>
-
-        </Link>
-        </div>
-      </div>
             </div>
-        </div>
-    );
+    <div >
+      <form
+        className='FormularioAgregar'
+        onSubmit={handleSubmit}>
+          <label >Agregar Imagen</label>
+            {picture && <img src={imageURL} style={{ width: 200 }} />}
+          <input
+          type="file"
+          onChange={handlePicture}
+        />
+        <br></br>
+        <label >Titulo</label>
+        <input
+          type="text"
+          value={titulo}
+          onChange={(e) => setTitulo(e.target.value)}
+          required
+        />
+        <br></br>
+        <label >Descripcion</label>
+        <input
+          type="text"
+          value={descripcion}
+          onChange={(e) => setDescripcion(e.target.value)}
+          required
+        />
+        <br></br>
+        <label >Cantidad</label>
+        <input
+          type="number"
+          value={cantidad}
+          onChange={(e) => setCantidad(e.target.value)}
+          required
+        />
+        <br></br>
+        <label >Precio</label>
+            <input
+          type="number"
+          value={precio}
+          onChange={(e) => setPrecio(e.target.value)}
+          required
+        />
+        <br></br>
+        <label >Realizada</label>
+ 
+        {loading ? (
+          <span >Loading...</span>
+        ) : (
+          <button className=" bg-blue-700 rounded p-2" type="submit">
+            Agregar
+          </button>
+        )}
+        <p className="text-white">{respuestaMensaje}</p>
+        {respuestaMensaje && (
+          <Link to="/" className="text-white">
+            Volver
+          </Link>
+        )}
+      </form>
+    </div>
+    </div>
+  );
 }
