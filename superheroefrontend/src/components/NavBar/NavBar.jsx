@@ -28,12 +28,9 @@ const menu = [
   },
   {
     name: "ADMINISTRAR",
-    to: "/administrar",
+    to: "/signin",
   },
-  {
-    name: "ADMINREGISTROS",
-    to: "/adminregistros",
-  },
+  
 ];
 
 

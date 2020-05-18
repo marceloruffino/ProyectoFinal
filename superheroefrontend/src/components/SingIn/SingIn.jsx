@@ -1,6 +1,7 @@
 import React from 'react';
 import './SingIn.css';
 import { LockOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 
 export default function SignIn() {
@@ -25,11 +26,12 @@ export default function SignIn() {
                 placeholder="Password"></input>
                 
                 </div>
-            <div className="form-group">
-                <button className="btn btn-primary btn-block" 
-                type="submit">Log In
+                <Link to="administrar">
+                <button color="white" className="btn btn-primary btn-block" >
+                  <span>Log In</span>
                 </button>
-            </div>
+              </Link>
+          
             <a href="#" 
             class="forgot">Forgot your email or password?
             </a>

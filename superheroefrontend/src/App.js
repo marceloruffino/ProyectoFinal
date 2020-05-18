@@ -8,10 +8,11 @@ import Home from "./pages/Home";
 import BookShop from "./pages/BookShop";
 import Merchandising from "./pages/Merchandising"
 import FanzineZone from "./pages/FanzineZone"
-import Administrar from "./pages/Administrar";
 import Registrar from "./pages/Registrar";
-import AdminRegistros from "./pages/AdminRegistros";
 import SingIn from "./pages/SingIn";
+import Administrar from "./pages/Administrar";
+import Agregar from "./pages/AgregarComics";
+import AdminRegistros from "./pages/AdminRegistros";
 import {
   BrowserRouter as Router,
   Switch,
@@ -30,14 +31,17 @@ export default function App() {
           <NavBar />
         </Content>
         <Switch>
-          <Route path="/singin">
-            <SingIn />
+        <Route path="/adminregistros">
+          <AdminRegistros />
           </Route>
-          <Route path="/adminregistros">
-            <AdminRegistros />
+        <Route path="/agregarcomics">
+          <Agregar />
           </Route>
-          <Route path="/administrar">
-            <Administrar />
+        <Route path="/administrar">
+          <Administrar />
+          </Route>
+          <Route path="/signin">
+          <SingIn />
           </Route>
           <Route path="/registrar">
             <Registrar />
