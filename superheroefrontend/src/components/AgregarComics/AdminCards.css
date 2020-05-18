@@ -23,6 +23,11 @@
   
 }
 
+
+
+
+
+
 .TituloAdministrar{
   background-color: #ffc1cc;
     font-family: monospace;
@@ -31,6 +36,7 @@
     justify-content: center;
     padding: 10px;
 }
+
 
 .AvatarRegistro{
     font-family: monospace;

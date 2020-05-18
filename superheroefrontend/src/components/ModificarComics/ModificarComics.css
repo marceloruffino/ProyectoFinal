@@ -1,0 +1,10 @@
+.FormularioMofificar{
+
+    font-family: monospace;
+    background-color: #000000;
+    color: grey;
+    padding: 10px;
+    display: grid;
+    justify-content: center;
+    
+  }

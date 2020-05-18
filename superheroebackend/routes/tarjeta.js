@@ -67,7 +67,7 @@ const newTarjeta = async (req, res) => {
 
   try {
     const respuesta = await tarjetaNueva.save();
-    res.json({ mensaje: "tarjeta nueva creada", tarjeta: respuesta });
+    res.json({ mensaje: "Tarjeta nueva creada con exito!!", tarjeta: respuesta });
   } catch (error) {
     res.status(500).json({ mensaje: "error al crear tarjeta", tipo: error });
   }

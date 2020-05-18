@@ -1,5 +1,5 @@
 //@ts-check
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import axios from "axios";
 import { Link } from "react-router-dom";
 import './AdminCards.css'
@@ -101,7 +101,6 @@ export default function AddList() {
           required
         />
         <br></br>
-        <label >Realizada</label>
  
         {loading ? (
           <span >Loading...</span>
@@ -111,11 +110,7 @@ export default function AddList() {
           </button>
         )}
         <p className="text-white">{respuestaMensaje}</p>
-        {respuestaMensaje && (
-          <Link to="/" className="text-white">
-            Volver
-          </Link>
-        )}
+        
       </form>
     </div>
     </div>

@@ -26,9 +26,9 @@ function App() {
         </Link>
       </div>
       <div className='botonAgregar'>
-        <Link to="agregarcomics">
+        <Link to="modificarcomics">
           <Button shape="round" icon={<FileAddOutlined />} >
-            Modificar Comics
+            Administrar Comics
             </Button>
         </Link>
       </div>

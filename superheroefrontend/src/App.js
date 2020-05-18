@@ -13,6 +13,7 @@ import SingIn from "./pages/SingIn";
 import Administrar from "./pages/Administrar";
 import Agregar from "./pages/AgregarComics";
 import AdminRegistros from "./pages/AdminRegistros";
+import ModificarComics from "./pages/ModificarComics";
 import {
   BrowserRouter as Router,
   Switch,
@@ -31,6 +32,9 @@ export default function App() {
           <NavBar />
         </Content>
         <Switch>
+        <Route path="/modificarcomics">
+          <ModificarComics />
+          </Route>
         <Route path="/adminregistros">
           <AdminRegistros />
           </Route>
