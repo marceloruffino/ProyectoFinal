@@ -66,4 +66,4 @@ const Tarjeta = () => {
 
 
 };
-export default Tarjeta
+export default Tarjeta;
