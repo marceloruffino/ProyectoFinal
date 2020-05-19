@@ -11,6 +11,9 @@ import {
 
 } from 'antd';
 import { Link } from 'react-router-dom';
+import Pie from '../components/FanzineZoneHome/fotoFanzineHome/Pie.png';
+
+
 function AdminRegistros() {
 
   return (
@@ -34,6 +37,9 @@ function AdminRegistros() {
 
       </Link>
     </div>
+    <div>
+          <img style={{background: '#ffc1cc'}} className='img-fluid' src={Pie} alt="" />
+        </div>
     </div>
   );
 }

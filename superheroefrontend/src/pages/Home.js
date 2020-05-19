@@ -21,7 +21,7 @@ function App() {
       <div className='TituloPrincipal'>
         <TituloLogo />
       </div>
-      <div className='TituloBookshop' >
+      <div className='TituloBookshop'  >
         <TituloBookShop />
         <div className='BookshopFondo'>
           <CardsHome />

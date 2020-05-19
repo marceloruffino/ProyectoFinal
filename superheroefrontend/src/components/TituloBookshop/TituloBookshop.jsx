@@ -5,12 +5,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function TituloBookShop() {
   return (
+    <div>
    <div >
        <img className='img-fluid' src={logoBookshop} alt=""/>
-       <p>TE PRESENTAMOS SUPERHEROES, 
-         LA TIENDA DE COMICS MAS GRANDE DE ARGENTINA, 
-         EN ELLAS PODRAS COMPRAR, VENDER, BUSCAR INFO Y 
-         TODO LO RELACIONADO CON LOS COMICS DE HOY. </p>
+       
+   </div>
+   <br/>
+   <div>
+   <p style={{textAlign: 'center'}}>EN NUESTRA TIENDA BOOKSHOP PODRAS ACCEDER AL STOCK MAS COMPLETO DE COMICS NACIONALES O IMPORTADOS, VER EL RANKIG DE LOS MAS COMPRADOS Y PARTICIPAR. ENTRA YA! </p>
+
+   </div>
    </div>
   );
 }

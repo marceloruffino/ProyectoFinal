@@ -1,15 +1,15 @@
 /* Estilo de la Tarjeta en si, con el efecto de zoom */
 figure.snip1253 {
-    font-family: monospace;
-    color: #fff;
+    
+   
     position: relative;
     
     overflow: hidden;
     margin: 10px 1%;
     min-width: 250px;
-    max-width: 310px;
     
-    background-color: lightgrey;
+    
+    max-width: 800px;
     color: #fff;
     text-align: left;
     font-size: 16px;
@@ -24,7 +24,7 @@ figure.snip1253 {
   }
   
   figure.snip1253 .image {
-    max-height: 220px;
+    max-height: 300px;
     overflow: hidden;
   }
   

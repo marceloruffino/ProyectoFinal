@@ -7,6 +7,8 @@ import { FileAddOutlined } from '@ant-design/icons';
 
 import { Link } from 'react-router-dom';
 import BotonCorazon from '../components/BotonCorazon/BotonCorazon';
+import Pie from '../components/FanzineZoneHome/fotoFanzineHome/Pie.png';
+
 
 
 function App() {
@@ -42,6 +44,9 @@ function App() {
       <div className='TituloAdministrar'>
         <BotonCorazon />
       </div>
+      <div>
+          <img style={{background: '#ffc1cc'}} className='img-fluid' src={Pie} alt="" />
+        </div>
     </div>
   );
 }
