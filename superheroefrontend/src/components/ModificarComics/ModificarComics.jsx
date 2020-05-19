@@ -19,7 +19,7 @@ const TablaComics = () => {
       axios.get('http://localhost:3000/Tarjeta/')
         .then((res) => {
           console.log(res.data);
-          setRespuestacomics(res.data.comics)
+          setRespuestacomics(res.data.tarjeta)
         })
         .catch((error) => {
           console.log(error.data);
@@ -99,8 +99,11 @@ const TablaComics = () => {
       title: 'Imagen',
       dataIndex: 'imagen',
       key: 'imagen',
-      width: '20%',
-      ...getColumnSearchProps('imagen'),
+      width: '10%',
+      // ...getColumnSearchProps('imagen'),
+      render: (imagen) =>{
+        return <img src={imagen} alt="" style={{maxWidth: '150px'}}/>
+      }
     },
     {
       title: 'Titulo',
@@ -113,7 +116,7 @@ const TablaComics = () => {
       title: 'Descripcion',
       dataIndex: 'descripcion',
       key: 'descripcion',
-      width: '10%',
+      width: '30%',
       ...getColumnSearchProps('descripcion'),
     },
     {

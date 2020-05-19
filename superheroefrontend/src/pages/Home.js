@@ -7,8 +7,8 @@ import TituloLogo from '../components/TituloLogo/TituloLogo';
 import TituloBookShop from '../components/TituloBookshop/TituloBookshop';
 import TituloFanzine from '../components/TituloFanzine/TituloFanzine';
 import TituloMerch from '../components/TituloMerch/TituloMerch';
-import FanzineZoneHome from '../components/FanzineZoneHome/FanzineZoneHome';
 import Pie from '../components/FanzineZoneHome/fotoFanzineHome/Pie.png';
+import Revista from '../components/FanzineZoneHome/fotoFanzineHome/revista003.jpg';
 import CardsHome from '../components/Cards/CardsHome';
 
 
@@ -46,10 +46,10 @@ function App() {
           <TituloFanzine />
         </div>
         <div>
-          <FanzineZoneHome />
+        <img className='img-fluid' src={Revista} alt="" />
         </div>
+        <img className='img-fluid' src={Pie} alt="" style={{background: '#def2fe'}} />
         <div>
-          <img className='img-fluid' src={Pie} alt="" />
         </div>
       </div>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import logoMerch from './fotoMerch/superHeroMerch.png';
+import logoMerch from './fotoMerch/superHeroMerch2.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 

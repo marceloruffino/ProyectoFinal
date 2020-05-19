@@ -1,5 +1,5 @@
 import React from 'react';
-import logoBookshop from './fotoBookshop/superHeroBook2.png';
+import logoBookshop from './fotoBookshop/superHeroBook3.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 

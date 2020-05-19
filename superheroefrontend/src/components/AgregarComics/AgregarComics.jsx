@@ -7,7 +7,7 @@ import './AdminCards.css'
 export default function AddList() {
   const [picture, setPicture] = useState("");
   const [titulo, setTitulo] = useState("");
-  const [descripcion, setDescripcion] = useState(0);
+  const [descripcion, setDescripcion] = useState("");
   const [cantidad, setCantidad] = useState(false);
   const [precio, setPrecio] = useState(false);
 
@@ -77,13 +77,14 @@ export default function AddList() {
           required
         />
         <br></br>
-        <label >Descripcion</label>
-        <input
+        <label>Descripcion</label>
+        <textarea
           type="text"
           value={descripcion}
           onChange={(e) => setDescripcion(e.target.value)}
+          placeholder="Texto Descriptivo"
           required
-        />
+        ></textarea>
         <br></br>
         <label >Cantidad</label>
         <input

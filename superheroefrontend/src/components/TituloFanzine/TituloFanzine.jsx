@@ -1,5 +1,5 @@
 import React from 'react';
-import logoFanzine from './fotoFanzine/superHeroFanzine.png';
+import logoFanzine from './fotoFanzine/superHeroFanzine2.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
