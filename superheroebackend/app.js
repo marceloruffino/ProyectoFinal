@@ -7,7 +7,6 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/nuevoSH', {useNewUrlParser: true});
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var regitroRouter = require('./routes/registro');
 const cors = require ("cors");
 
 var app = express();
@@ -26,6 +25,8 @@ app.options("*", cors());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+
 // app.use('/registro', registroRouter);
 
 

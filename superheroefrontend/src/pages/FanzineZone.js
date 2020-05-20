@@ -4,7 +4,7 @@ import TituloFanzine from '../components/TituloFanzine/TituloFanzine';
 import FanzineZoneHome from '../components/FanzineZoneHome/FanzineZoneHome';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Pie from '../components/FanzineZoneHome/fotoFanzineHome/Pie.png';
-import Divisorio from '../components/FanzineZoneHome/fotoFanzineHome/divisorio.png';
+import Divisorio from '../components/FanzineZoneHome/fotoFanzineHome/divisorio3.png';
 import BatmanDivisorio from '../components/FanzineZoneHome/fotoFanzineHome/batmanDivisorio.jpg';
 import SpidermanDivisorio from '../components/FanzineZoneHome/fotoFanzineHome/spidermanDivisorio.jpg';
 import DcVsMarvel from '../components/FanzineZoneHome/fotoFanzineHome/DcVsMarvel.jpg';
