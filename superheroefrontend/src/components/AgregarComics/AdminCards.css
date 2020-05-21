@@ -36,6 +36,12 @@
     justify-content: center;
     padding: 10px;
 }
+.AdminDark {
+  height: 800px;
+  background: #475d62 url(../../components/AgregarComics/fotoAdminComics/blackIronman.jpg);
+  background-size: cover;
+  position: relative;
+}
 
 
 .AvatarRegistro{

@@ -6,8 +6,9 @@ import { Button } from 'antd';
 import { FileAddOutlined } from '@ant-design/icons';
 
 import { Link } from 'react-router-dom';
-import BotonCorazon from '../components/BotonCorazon/BotonCorazon';
 import Pie from '../components/FanzineZoneHome/fotoFanzineHome/Pie.png';
+import Divisorio from '../components/FanzineZoneHome/fotoFanzineHome/divisorio3.png';
+
 
 
 
@@ -15,44 +16,65 @@ function App() {
 
   return (
     <div>
-      <div className='TituloAdministrar'>
+    <div className="AdminDark img-fluid">
+     
         <h2 >
           PANEL DE ADMINISTRACION
             </h2>
-      </div>
-      <div className='botonAgregar'>
+      <div >
         <Link to="agregarcomics">
-          <Button shape="round" icon={<FileAddOutlined />} >
+          <Button style={{height: '30px'}}shape="round" icon={<FileAddOutlined />} >
             Agregar Comics
             </Button>
         </Link>
       </div>
-      <div className='botonAgregar'>
+      <div >
         <Link to="modificarcomics">
-          <Button shape="round" icon={<FileAddOutlined />} >
+          <Button style={{height: '30px'}}shape="round" icon={<FileAddOutlined />} >
             Administrar Comics
             </Button>
         </Link>
       </div>
-      <div className='botonAgregar'>
+      <div >
         <Link to="adminregistros">
-          <Button shape="round" icon={<FileAddOutlined />} >
+          <Button style={{height: '30px'}}shape="round" icon={<FileAddOutlined />} >
             Administrar Registros
             </Button>
         </Link>
       </div>
-      <div className='botonAgregar'>
-        <Link to="agregarcardcome">
-          <Button shape="round" icon={<FileAddOutlined />} >
-            Administrar Cards Conmemorativas
+      <div >
+        <Link to="">
+          <Button style={{height: '30px'}}shape="round" icon={<FileAddOutlined />} >
+            Agregar Comics Conmemorativos
             </Button>
         </Link>
       </div>
-     
-      <div>
-          <img style={{background: '#ffc1cc'}} className='img-fluid' src={Pie} alt="" />
-        </div>
+      <div >
+        <Link to="agregarcardcome">
+          <Button style={{height: '30px'}} shape="round" icon={<FileAddOutlined />} >
+            Administrar Comics Conmemorativos
+            </Button>
+        </Link>
+      </div>
+      <div >
+        <Link to="">
+          <Button style={{height: '30px'}}shape="round" icon={<FileAddOutlined />} >
+            Agregar Noticia
+            </Button>
+        </Link>
+      </div>
+      <div >
+        <Link to="">
+          <Button style={{height: '30px'}}shape="round" icon={<FileAddOutlined />} >
+            Administrar Noticia
+            </Button>
+        </Link>
+      </div>
     </div>
+      <div>
+          <img  style={{background: 'black'}}className='img-fluid' src={Pie} alt="" />
+        </div>
+   </div>   
   );
 }
 

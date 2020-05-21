@@ -10,6 +10,12 @@ import TituloMerch from '../components/TituloMerch/TituloMerch';
 import Pie from '../components/FanzineZoneHome/fotoFanzineHome/Pie.png';
 import Revista from '../components/FanzineZoneHome/fotoFanzineHome/revista003.jpg';
 import CardsHome from '../components/Cards/CardsHome';
+import { Button } from 'antd';
+import { Link } from 'react-router-dom';
+
+import { InfoCircleFilled } from '@ant-design/icons';
+
+
 
 
 
@@ -23,8 +29,15 @@ function App() {
       </div>
       <div className='TituloBookshop'  >
         <TituloBookShop />
-        <div className='BookshopFondo'>
+        <div className='BookshopFondo' style={{paddingBottom: '30px'}}>
           <CardsHome />
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center'}}>
+        <Link to="bookshop">
+          <Button shape="round" icon={<InfoCircleFilled />} style={{ display: 'flex', justifyContent: 'center', paddingTop: '6px'}}>
+          Mas Info
+            </Button>
+        </Link>
         </div>
       </div>
 
@@ -32,11 +45,19 @@ function App() {
         <div>
           <TituloMerch />
         </div>
+        
       </div>
 
-      <div className='MerchFondo'>
+      <div className='MerchFondo' style={{paddingBottom: '10px'}}>
         <div className='CarouselMerch'>
           <CaruselFotos />
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center'}}>
+        <Link to="merchandising">
+          <Button shape="round" icon={<InfoCircleFilled />} style={{ display: 'flex', justifyContent: 'center', paddingTop: '6px'}}>
+          Mas Info
+            </Button>
+        </Link>
         </div>
       </div>
 
@@ -47,6 +68,13 @@ function App() {
         </div>
         <div>
         <img className='img-fluid' src={Revista} alt="" />
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center'}}>
+        <Link to="fanzinezone">
+          <Button shape="round" icon={<InfoCircleFilled />} style={{ display: 'flex', justifyContent: 'center', paddingTop: '6px'}}>
+          Mas Info
+            </Button>
+        </Link>
         </div>
         <img className='img-fluid' src={Pie} alt="" style={{background: '#def2fe'}} />
         <div>
