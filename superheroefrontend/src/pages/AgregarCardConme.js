@@ -5,7 +5,7 @@ import { Button } from 'antd';
 import { RollbackOutlined } from '@ant-design/icons';
 import { Link } from "react-router-dom";
 import Pie from '../components/FanzineZoneHome/fotoFanzineHome/Pie.png';
-import AddCardConme from '../components/AgregarComics/AgregarComicsConme';
+import AddCardConme from '../components/AgregarCardConme/AgregarCardConme';
 
 
 

@@ -14,6 +14,7 @@ import { Player } from 'video-react';
 import "../components/FanzineZoneHome/FanzineZoneHome.css";
 
 
+
 import "../App.css"
 import TarjetaConmemorativa from '../components/Cards/CardsConmemorativos';
 
@@ -21,7 +22,7 @@ function App() {
   return (
 
 
-    <div >
+    <div>
 
       <div className='TituloFanzineZone'>
         <TituloFanzine />
@@ -36,9 +37,9 @@ function App() {
       </div>
       <div className='fondoDcVsMarvel'>
         <h2 className='tituloDcVsMarvel'>
-          Marvel Vs. Dc  
+          Marvel Vs. Dc
                 </h2>
-                <p className='textoDcVsMarvel'>Marvel Comics versus DC fue un crossover de miniserie de cómics publicado por DC Comics y Marvel Comics de abril a mayo de 1996. La serie fue escrita por Ron Marz y Peter David, con arte de Dan Jurgens y Claudio Castellini. [2]
+        <p className='textoDcVsMarvel'>Marvel Comics versus DC fue un crossover de miniserie de cómics publicado por DC Comics y Marvel Comics de abril a mayo de 1996. La serie fue escrita por Ron Marz y Peter David, con arte de Dan Jurgens y Claudio Castellini. [2]
 La serie crossover especial enfrentó a los superhéroes de Marvel Comics contra sus contrapartes de DC en la batalla. El resultado de cada batalla fue determinado por la votación del lector, que se distribuyó por adelantado a las tiendas de cómics.</p>
       </div>
       <div style={{ background: 'black' }}>
@@ -66,16 +67,16 @@ La serie crossover especial enfrentó a los superhéroes de Marvel Comics contra
           </Player>
         </div>
         <div className='fondoDcVsMarvel'>
-        <h2 className='tituloDcVsMarvel'>
-          Nuestros Comics Conmemorativos  
+          <h2 className='tituloDcVsMarvel'>
+            Nuestros Comics Conmemorativos
                 </h2>
-                <p className='textoDcVsMarvel'>Dos Hermanos divinos que personifican los universos DC y Marvel cada uno se dan cuenta de la existencia del otro y se desafían entre sí a una serie de duelos que involucran a los respectivos superhéroes de cada universo. El universo perdedor dejaría de existir. La historia tenía un componente "fuera del universo" en que los resultados de las batallas primarias estaban determinados por los votos de los lectores.</p>
-      </div>
-      <div >
-        <div className='CardsConmemorativos'>
-        <TarjetaConmemorativa />
+          <p className='textoDcVsMarvel'>Dos Hermanos divinos que personifican los universos DC y Marvel cada uno se dan cuenta de la existencia del otro y se desafían entre sí a una serie de duelos que involucran a los respectivos superhéroes de cada universo. El universo perdedor dejaría de existir. La historia tenía un componente "fuera del universo" en que los resultados de las batallas primarias estaban determinados por los votos de los lectores.</p>
         </div>
-      </div>
+        <div >
+          <div className='CardsConmemorativos'>
+            <TarjetaConmemorativa />
+          </div>
+        </div>
         <div >
           <img className='img-fluid' src={Pie} alt="" style={{ background: 'black' }} />
         </div>

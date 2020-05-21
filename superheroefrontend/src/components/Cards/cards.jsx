@@ -5,6 +5,7 @@ import { InfoCircleOutlined, InstagramOutlined, FacebookOutlined } from '@ant-de
 import 'antd/dist/antd.css';
 import './Card.css';
 import axios from 'axios';
+import Likes from '../BotonCorazon/BotonCorazon';
 
 const { Meta } = Card;
 
@@ -44,7 +45,7 @@ const Tarjeta = () => {
           actions={[
             <InfoCircleOutlined />,
             <InstagramOutlined />,
-            <FacebookOutlined />,
+            <Likes />,
           ]}
         >
           <Meta

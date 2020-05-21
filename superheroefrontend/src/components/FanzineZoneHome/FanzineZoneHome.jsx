@@ -2,10 +2,17 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./FanzineZoneHome.css";
 import { InfoCircleOutlined } from '@ant-design/icons';
+import { Button } from 'antd';
+import { Link } from 'react-router-dom';
+import { FileAddOutlined } from '@ant-design/icons';
+
+
 
 import News1 from './fotoFanzineHome/FanzineHome001.jpg'
 import News2 from './fotoFanzineHome/FanzineHome002.jpg'
 import News3 from './fotoFanzineHome/FanzineHome003.jpg'
+
+
 
 export default function FanzineZoneHome() {
   return (
@@ -30,9 +37,12 @@ export default function FanzineZoneHome() {
             <p className="description">
             Los inadaptados favoritos de los fanáticos de Crazy Jane (Diane Guerrero - "Orange is the New Black") Cliff Steele / Robotman (Brendan Fraser - "The Mummy"), Larry Trainer / Negative Man (Matt Bomer - "American Horror Story") Rita Farr / Elasti-Woman (April Bowlby - "Two and a Half Men") y Vic Stone / Cyborg (Joivan Wade - "Doctor Who") regresan en la segunda temporada de DOOM PATROL en DC UNIVERSE, con nuevos episodios que debutan todos los jueves.
                 </p>
-            <a href="#" className="action">
-            <InfoCircleOutlined />
-            </a>
+                <div className='botonAgregar'>
+            <Link to="noticias">
+                <Button shape="round" icon={<FileAddOutlined />} >
+                </Button>
+             </Link>
+      </div>
           </div>
           <div className="col-sm-6 col-md-4 item">
             <a href="#">

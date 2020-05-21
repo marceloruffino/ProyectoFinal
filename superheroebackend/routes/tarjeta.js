@@ -12,7 +12,7 @@ const storage = multer.diskStorage({
     cb(null, Date.now() + '-' + file.originalname)
   }
 })
- 
+
 var upload = multer({ storage: storage })
 
 const TarjetaSchema = new Schema({
@@ -24,12 +24,16 @@ const TarjetaSchema = new Schema({
   descripcion: {
     type: String,
   },
-  cantidad : {
+  cantidad: {
     type: Number,
   },
   precio: {
     type: Number,
   },
+  likes: {
+    type: Number,
+  },
+
 });
 
 const TarjetaModel = mongoose.model("tarjeta", TarjetaSchema);
@@ -44,15 +48,15 @@ router.get("/", async (req, res) => {
 });
 
 
-router.get("/:id", async(req, res) => {
-    const id = req.params.id
-    try {
-     const respuesta =  await TarjetaModel.findById(id);
-     res.json({ mensaje: "tarjeta", tarjeta: respuesta });
-    } catch (error) {
-      res.status(500).json({ mensaje: "error", tipo: error });
-    }
-  });
+router.get("/:id", async (req, res) => {
+  const id = req.params.id
+  try {
+    const respuesta = await TarjetaModel.findById(id);
+    res.json({ mensaje: "tarjeta", tarjeta: respuesta });
+  } catch (error) {
+    res.status(500).json({ mensaje: "error", tipo: error });
+  }
+});
 
 const newTarjeta = async (req, res) => {
   const urlImage = 'http://localhost:3000/imagenes/' + req.file.filename
@@ -62,7 +66,8 @@ const newTarjeta = async (req, res) => {
     titulo: req.body.titulo,
     descripcion: req.body.descripcion,
     cantidad: req.body.cantidad,
-    precio: req.body.precio
+    precio: req.body.precio,
+    likes: 129
   });
 
   try {
@@ -75,11 +80,11 @@ const newTarjeta = async (req, res) => {
 
 router.post("/", upload.single('imagen'), newTarjeta)
 
-router.put("/:id", async(req, res) => {
+router.put("/:id", async (req, res) => {
   const id = req.params.id;
   const tarjetaModificada = req.body;
   try {
-    const respuesta =  await TarjetaModel.findByIdAndUpdate(id,tarjetaModificada);
+    const respuesta = await TarjetaModel.findByIdAndUpdate(id, tarjetaModificada);
     res.json({ mensaje: "tarjeta modificada", tarjeta: respuesta });
   } catch (error) {
     res.status(500).json({ mensaje: "error", tipo: error });
@@ -88,14 +93,14 @@ router.put("/:id", async(req, res) => {
 
 // BORRAR SOLO UN ARCHIVO
 
-router.delete("/:id", async(req, res) => {
-    const id = req.params.id;
-    try {
-      const respuesta =  await TarjetaModel.findByIdAndDelete(id);
-      res.json({ mensaje: "tarjeta borrada", tarjeta: respuesta });
-    } catch (error) {
-      res.status(500).json({ mensaje: "error", tipo: error });
-    }
-  });
-  
+router.delete("/:id", async (req, res) => {
+  const id = req.params.id;
+  try {
+    const respuesta = await TarjetaModel.findByIdAndDelete(id);
+    res.json({ mensaje: "tarjeta borrada", tarjeta: respuesta });
+  } catch (error) {
+    res.status(500).json({ mensaje: "error", tipo: error });
+  }
+});
+
 module.exports = router;

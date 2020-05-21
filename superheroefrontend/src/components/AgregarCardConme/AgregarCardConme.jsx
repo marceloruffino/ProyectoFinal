@@ -1,7 +1,7 @@
 //@ts-check
 import React, { useState } from 'react';
 import axios from "axios";
-import './AdminCards.css'
+import './AgregarCardConme.css'
 
 export default function AddCardConme() {
   const [imagen, setImagen] = useState("");
@@ -51,7 +51,7 @@ export default function AddCardConme() {
     <div>
        <div className='TituloAdministrar'>
                 <h2>
-                    Agregar Comics
+                    Agregar Card Conmemorativa
                 </h2>
             </div>
             <div>

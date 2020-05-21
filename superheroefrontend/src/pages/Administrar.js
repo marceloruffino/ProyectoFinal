@@ -41,9 +41,14 @@ function App() {
             </Button>
         </Link>
       </div>
-      <div className='TituloAdministrar'>
-        <BotonCorazon />
+      <div className='botonAgregar'>
+        <Link to="agregarcardcome">
+          <Button shape="round" icon={<FileAddOutlined />} >
+            Administrar Cards Conmemorativas
+            </Button>
+        </Link>
       </div>
+     
       <div>
           <img style={{background: '#ffc1cc'}} className='img-fluid' src={Pie} alt="" />
         </div>

@@ -14,6 +14,8 @@ import Administrar from "./pages/Administrar";
 import Agregar from "./pages/AgregarComics";
 import AdminRegistros from "./pages/AdminRegistros";
 import ModificarComics from "./pages/ModificarComics";
+import AgregarCardConme from "./pages/AgregarCardConme";
+import Noticias from "./pages/Noticias";
 import {
   BrowserRouter as Router,
   Switch,
@@ -32,6 +34,12 @@ export default function App() {
           <NavBar />
         </Content>
         <Switch>
+        <Route path="/noticias">
+          <Noticias />
+          </Route>
+        <Route path="/agregarcardconme">
+          <AgregarCardConme />
+          </Route>
         <Route path="/modificarcomics">
           <ModificarComics />
           </Route>
