@@ -6,12 +6,12 @@ import { WeiboOutlined, TwitterOutlined, InstagramOutlined, FacebookOutlined } f
 export default function Footer() {
     return (
 
-        <body>
-            <div class="footer-dark">
+        
+            <div className="footer-dark">
                 <footer>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-6 col-md-3 item">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-sm-6 col-md-3 item">
                                 <h3>Servicios</h3>
                                 <ul>
                                     <li><a href="#">Diseño Web</a></li>
@@ -19,7 +19,7 @@ export default function Footer() {
                                     <li><a href="#">Hosting</a></li>
                                 </ul>
                             </div>
-                            <div class="col-sm-6 col-md-3 item">
+                            <div className="col-sm-6 col-md-3 item">
                                 <h3>Nosotros</h3>
                                 <ul>
                                     <li><a href="#">Compañia</a></li>
@@ -27,11 +27,11 @@ export default function Footer() {
                                     <li><a href="#">Carrera</a></li>
                                 </ul>
                             </div>
-                            <div class="col-md-6 item text">
+                            <div className="col-md-6 item text">
                                 <h3>Super Heroe</h3>
                                 <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
                             </div>
-                            <div class="col item social">
+                            <div className="col item social">
                                 <a href="#">
                                 <FacebookOutlined />
                                 </a>
@@ -46,11 +46,11 @@ export default function Footer() {
                                 </a>
                             </div>
                         </div>
-                        <p class="copyright">Super Heroe © 2020</p>
+                        <p className="copyright">Super Heroe © 2020</p>
                     </div>
                 </footer>
             </div>
-        </body>
+        
 
     );
 }

@@ -12,7 +12,7 @@ import { EyeOutlined, HeartOutlined, WechatOutlined } from '@ant-design/icons';
 export default function CardsHome() {
   return (
    
-       <div>
+       <>
                 <figure className="snip1253">
                     <div className="image"><img src={Card001} alt=""/></div>
                     <figcaption>
@@ -73,7 +73,7 @@ export default function CardsHome() {
                         <div className="comments"><WechatOutlined />23</div>
                     </footer><a href="#"></a>
                 </figure>
-        </div>
+        </>
 
     
   );

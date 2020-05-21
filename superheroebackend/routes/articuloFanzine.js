@@ -38,7 +38,10 @@ const ArticuloFanzineSchema = new Schema({
   descripcion1: {
     type: String,
   },
-  
+
+  imagen2: String,
+
+
   descripcion2: {
     type: String,
   },
@@ -68,7 +71,8 @@ router.get("/:id", async(req, res) => {
   });
 
 const newArticuloFanzine = async (req, res) => {
-  const urlImage = 'http://localhost:3000/imagenesFanzine/' + req.file.filename
+  const urlImage = 'http://localhost:3000/imagenesFanzine/' + req.files[0].filename
+  const urlImage2 = 'http://localhost:3000/imagenesFanzine/' + req.files[1].filename
   const articuloFanzineNuevo = new ArticuloFanzineModel({
     _id: new ObjectID(),
     titulo: req.body.titulo,
@@ -76,6 +80,7 @@ const newArticuloFanzine = async (req, res) => {
     subtitulo: req.body.subtitulo,
     resumen: req.body.resumen,
     imagen: urlImage,
+    imagen2:urlImage2,
     descripcion1: req.body.descripcion1,
     descripcion2: req.body.descripcion2,
   });
@@ -88,7 +93,7 @@ const newArticuloFanzine = async (req, res) => {
   }
 };
 
-router.post("/", upload.single('imagen'), newArticuloFanzine)
+router.post("/", upload.array('imagen', 2), newArticuloFanzine)
 
 router.put("/:id", async(req, res) => {
   const id = req.params.id;

@@ -1,15 +1,14 @@
 //@ts-check
 import React, { useState } from 'react';
 import axios from "axios";
-import { Link } from "react-router-dom";
 import './AdminCards.css'
 
-export default function AddList() {
-  const [picture, setPicture] = useState("");
+export default function AddCardConme() {
+  const [imagen, setImagen] = useState("");
   const [titulo, setTitulo] = useState("");
   const [descripcion, setDescripcion] = useState("");
-  const [cantidad, setCantidad] = useState(false);
-  const [precio, setPrecio] = useState(false);
+  const [fecha, setFecha] = useState("");
+  const [likes, setLikes] = useState("");
 
   const [loading, setLoading] = useState(false);
   const [respuestaMensaje, setRespuestaMensaje] = useState("");
@@ -19,11 +18,11 @@ export default function AddList() {
       e.preventDefault();
       setLoading(true);
       const payload = new FormData();
-      payload.append("imagen", picture);
+      payload.append("imagen", imagen);
       payload.append("titulo", titulo.toString());
       payload.append("descripcion", descripcion.toString());
-      payload.append("cantidad", cantidad.toString());
-      payload.append("precio", precio.toString());
+      payload.append("fecha", fecha.toString());
+      payload.append("likes", likes.toString());
 
 
 
@@ -43,10 +42,10 @@ export default function AddList() {
   };
 
   const handlePicture = (e) => {
-    setPicture(e.target.files[0]);
+    setImagen(e.target.files[0]);
   };
 
-  const imageURL = picture && URL.createObjectURL(picture);
+  const imageURL = imagen && URL.createObjectURL(imagen);
 
   return (
     <div>
@@ -63,10 +62,9 @@ export default function AddList() {
         className='FormularioAgregar'
         onSubmit={handleSubmit}>
           <label >Agregar Imagen</label>
-            {picture && <img src={imageURL} style={{ width: 200 }} />}
+            {imagen && <img src={imageURL} style={{ width: 200 }} />}
           <input
           type="file"
-          multiple
           onChange={handlePicture}
         />
         <br></br>
@@ -87,19 +85,19 @@ export default function AddList() {
           required
         ></textarea>
         <br></br>
-        <label >Cantidad</label>
+        <label >Fecha</label>
         <input
-          type="number"
-          value={cantidad}
-          onChange={(e) => setCantidad(e.target.value)}
+          type="text"
+          value={fecha}
+          onChange={(e) => setFecha(e.target.value)}
           required
         />
         <br></br>
-        <label >Precio</label>
+        <label >Likes</label>
             <input
-          type="number"
-          value={precio}
-          onChange={(e) => setPrecio(e.target.value)}
+          type="text"
+          value={likes}
+          onChange={(e) => setLikes(e.target.value)}
           required
         />
         <br></br>

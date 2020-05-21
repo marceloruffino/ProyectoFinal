@@ -56,8 +56,10 @@
   background-color: #F8ED89;
   font-family: monospace;
   display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 700px));
     grid-gap: 1rem;
+    
+    justify-content: center;
 }
 
 
