@@ -17,6 +17,7 @@ import "../components/FanzineZoneHome/FanzineZoneHome.css";
 
 import "../App.css"
 import TarjetaConmemorativa from '../components/Cards/CardsConmemorativos';
+import NoticiaResumida from '../components/NoticiaResumida/NoticiaResumida';
 
 function App() {
   return (
@@ -27,11 +28,18 @@ function App() {
       <div className='TituloFanzineZone'>
         <TituloFanzine />
       </div>
-
-      <div className='TituloFanzineZone'>
-        <FanzineZoneHome />
+      <div className='NoticiaResumida'>
+            <div >
+            <NoticiaResumida />
+            </div>
+            <div >
+            <NoticiaResumida />
+            </div>
+            <div >
+            <NoticiaResumida />
+            </div>
+            
       </div>
-
       <div >
         <img className='img-fluid' src={Divisorio} alt="" style={{ background: '#def2fe' }} />
       </div>

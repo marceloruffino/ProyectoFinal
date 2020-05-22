@@ -16,6 +16,7 @@ import AdminRegistros from "./pages/AdminRegistros";
 import ModificarComics from "./pages/ModificarComics";
 import AgregarCardConme from "./pages/AgregarCardConme";
 import Noticias from "./pages/Noticias";
+import VideoFondoPantalla from "./pages/VideoFondoPantalla";
 import {
   BrowserRouter as Router,
   Switch,
@@ -34,6 +35,9 @@ export default function App() {
           <NavBar />
         </Content>
         <Switch>
+        <Route path="/videofondopantalla">
+          <VideoFondoPantalla />
+          </Route>
         <Route path="/noticias">
           <Noticias />
           </Route>

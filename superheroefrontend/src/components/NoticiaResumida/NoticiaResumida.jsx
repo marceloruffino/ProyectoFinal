@@ -9,7 +9,7 @@ import News1 from './fotoNoticiaResumida/FanzineHome001.jpg'
 
 export default function NoticiaResumida() {
   return (
-    <div >
+    <>
        
         <div className="row articles">
           <div className="col-sm-6 col-md-4 item">
@@ -30,7 +30,7 @@ export default function NoticiaResumida() {
         </div>
      </div>
      </div>
-     </div>
+    </>
      
   );
 }

@@ -36,6 +36,14 @@
   align-items: center;
   padding: 10px;
 }
+/* Css para las Noticias resumidas de Bookshop */
+.NoticiaResumida {
+  background-color: #def2fe;
+  font-family: monospace;
+  display: flex;
+  align-items: stretch;
+}
+
 /* Pagina Home: Logo Pricipal y texto explicativo */
 .TituloPrincipal{
   background-color: #ffc1cc;
