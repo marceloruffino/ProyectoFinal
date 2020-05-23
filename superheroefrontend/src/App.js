@@ -38,7 +38,7 @@ export default function App() {
         <Route path="/videofondopantalla">
           <VideoFondoPantalla />
           </Route>
-        <Route path="/noticias">
+        <Route path="/noticias/:idNoticia">
           <Noticias />
           </Route>
         <Route path="/agregarcardconme">

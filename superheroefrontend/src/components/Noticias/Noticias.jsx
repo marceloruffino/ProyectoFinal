@@ -3,8 +3,12 @@ import './Noticias.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Noticia001 from './AdminNoticiasPhotos/noticia001-1.jpg'
 import Noticia002 from './AdminNoticiasPhotos/noticia001-2.jpg'
+import { useParams } from 'react-router-dom';
 
 export default function Noticias() {
+
+    const {idNoticia} = useParams();
+    console.log(idNoticia)
     return (
         
             <div className="article-dual-column">
