@@ -24,30 +24,24 @@ const RegistroSchema = new Schema({
   apellido: {
     type: String,
   },
-  sexo: {
-    type: String,
-  },
-  fechaNacimiento: {
-    type: Date,
-  },
-  direccion: {
-    type: String,
-  },
-  provincia: {
-    type: String,
-  },
-  codigoPostal: {
-    type: Number
-  },
-  telefono: {
-    type: Number
-  },
   email: {
     type: String,
     lowercase: true,
     required: [true, "can't be blank"],
     match: [/\S+@\S+\.\S+/, "is invalid"],
     index: true,
+  },
+  dcComics: {
+    type: Boolean,
+  },
+  marvelComics: {
+    type: Boolean,
+  },
+  horseComics: {
+    type: Boolean,
+  },
+  imageComics: {
+    type: Boolean,
   },
   newsLetter: {
     type: Boolean,

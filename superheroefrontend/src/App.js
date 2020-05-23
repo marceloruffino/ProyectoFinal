@@ -13,8 +13,11 @@ import SingIn from "./pages/SingIn";
 import Administrar from "./pages/Administrar";
 import Agregar from "./pages/AgregarComics";
 import AdminRegistros from "./pages/AdminRegistros";
-import ModificarComics from "./pages/ModificarComics";
+import AdministrarComics from "./pages/AdministrarComics";
+import AdministrarComicsConme from "./pages/AdministrarComicsConme";
 import AgregarCardConme from "./pages/AgregarCardConme";
+import AgregarNoticia from "./pages/AgregarNoticia";
+import AdministrarNoticia from "./pages/AdministrarNoticia";
 import Noticias from "./pages/Noticias";
 import VideoFondoPantalla from "./pages/VideoFondoPantalla";
 import {
@@ -44,11 +47,20 @@ export default function App() {
         <Route path="/agregarcardconme">
           <AgregarCardConme />
           </Route>
-        <Route path="/modificarcomics">
-          <ModificarComics />
+        <Route path="/administrarcomicsconme">
+          <AdministrarComicsConme />
           </Route>
         <Route path="/adminregistros">
           <AdminRegistros />
+          </Route>
+        <Route path="/adminitrarnoticia">
+          <AdministrarNoticia />
+          </Route>
+        <Route path="/agregarnoticia">
+          <AgregarNoticia />
+          </Route>
+        <Route path="/administrarcomics">
+          <AdministrarComics />
           </Route>
         <Route path="/agregarcomics">
           <Agregar />

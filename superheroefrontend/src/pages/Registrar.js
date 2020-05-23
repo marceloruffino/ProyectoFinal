@@ -17,9 +17,6 @@ function Registrar() {
       <h3 className='TituloRegistro'>
             Registro para NewsLetters
             </h3>
-                    <div className='AvatarRegistro'>
-    <Avatar />
-    </div>
      <FormularioRegistro />
     </div>
     <div>

@@ -7,7 +7,6 @@ import { FileAddOutlined } from '@ant-design/icons';
 
 import { Link } from 'react-router-dom';
 import Pie from '../components/FanzineZoneHome/fotoFanzineHome/Pie.png';
-import Divisorio from '../components/FanzineZoneHome/fotoFanzineHome/divisorio3.png';
 
 
 
@@ -29,7 +28,7 @@ function App() {
         </Link>
       </div>
       <div >
-        <Link to="modificarcomics">
+        <Link to="administrarcomics">
           <Button style={{height: '30px'}}shape="round" icon={<FileAddOutlined />} >
             Administrar Comics
             </Button>
@@ -43,28 +42,28 @@ function App() {
         </Link>
       </div>
       <div >
-        <Link to="">
+        <Link to="agregarcardconme">
           <Button style={{height: '30px'}}shape="round" icon={<FileAddOutlined />} >
             Agregar Comics Conmemorativos
             </Button>
         </Link>
       </div>
       <div >
-        <Link to="agregarcardcome">
+        <Link to="administrarcomicsconme">
           <Button style={{height: '30px'}} shape="round" icon={<FileAddOutlined />} >
             Administrar Comics Conmemorativos
             </Button>
         </Link>
       </div>
       <div >
-        <Link to="">
+        <Link to="agregarnoticia">
           <Button style={{height: '30px'}}shape="round" icon={<FileAddOutlined />} >
             Agregar Noticia
             </Button>
         </Link>
       </div>
       <div >
-        <Link to="">
+        <Link to="adminitrarnoticia">
           <Button style={{height: '30px'}}shape="round" icon={<FileAddOutlined />} >
             Administrar Noticia
             </Button>

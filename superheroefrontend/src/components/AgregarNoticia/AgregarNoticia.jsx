@@ -1,14 +1,15 @@
 //@ts-check
 import React, { useState } from 'react';
 import axios from "axios";
-import './AgregarCardConme.css'
+import { Link } from "react-router-dom";
+import './AgregarNoticia.css'
 
-export default function AddCardConme() {
-  const [imagen, setImagen] = useState("");
+export default function AddNews() {
+  const [picture, setPicture] = useState("");
   const [titulo, setTitulo] = useState("");
   const [descripcion, setDescripcion] = useState("");
-  const [fecha, setFecha] = useState("");
-  const [likes, setLikes] = useState("");
+  const [cantidad, setCantidad] = useState(false);
+  const [precio, setPrecio] = useState(false);
 
   const [loading, setLoading] = useState(false);
   const [respuestaMensaje, setRespuestaMensaje] = useState("");
@@ -18,11 +19,11 @@ export default function AddCardConme() {
       e.preventDefault();
       setLoading(true);
       const payload = new FormData();
-      payload.append("imagen", imagen);
+      payload.append("imagen", picture);
       payload.append("titulo", titulo.toString());
       payload.append("descripcion", descripcion.toString());
-      payload.append("fecha", fecha.toString());
-      payload.append("likes", likes.toString());
+      payload.append("cantidad", cantidad.toString());
+      payload.append("precio", precio.toString());
 
 
 
@@ -42,16 +43,16 @@ export default function AddCardConme() {
   };
 
   const handlePicture = (e) => {
-    setImagen(e.target.files[0]);
+    setPicture(e.target.files[0]);
   };
 
-  const imageURL = imagen && URL.createObjectURL(imagen);
+  const imageURL = picture && URL.createObjectURL(picture);
 
   return (
     <div>
        <div className='TituloAdministrar'>
                 <h2>
-                    Agregar Comics Conmemorativo
+                    Agregar Noticia
                 </h2>
             </div>
             <div>
@@ -62,9 +63,10 @@ export default function AddCardConme() {
         className='FormularioAgregar'
         onSubmit={handleSubmit}>
           <label >Agregar Imagen</label>
-            {imagen && <img src={imageURL} style={{ width: 200 }} />}
+            {picture && <img src={imageURL} style={{ width: 200 }} />}
           <input
           type="file"
+          multiple
           onChange={handlePicture}
         />
         <br></br>
@@ -85,19 +87,19 @@ export default function AddCardConme() {
           required
         ></textarea>
         <br></br>
-        <label >Fecha</label>
+        <label >Cantidad</label>
         <input
-          type="text"
-          value={fecha}
-          onChange={(e) => setFecha(e.target.value)}
+          type="number"
+          value={cantidad}
+          onChange={(e) => setCantidad(e.target.value)}
           required
         />
         <br></br>
-        <label >Likes</label>
+        <label >Precio</label>
             <input
-          type="text"
-          value={likes}
-          onChange={(e) => setLikes(e.target.value)}
+          type="number"
+          value={precio}
+          onChange={(e) => setPrecio(e.target.value)}
           required
         />
         <br></br>

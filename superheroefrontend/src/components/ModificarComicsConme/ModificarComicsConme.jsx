@@ -4,32 +4,32 @@ import axios from 'axios';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'antd/dist/antd.css';
-import { Table, Input, Button, Space, Switch } from 'antd';
+import { Table, Input, Button, Space } from 'antd';
 import Highlighter from 'react-highlight-words';
 import { SearchOutlined } from '@ant-design/icons';
 
-const TablaRegistro = () => {
-  const [respuestaregistro, setRespuestaregistro] = useState([]);
+const TablaComicsConme = () => {
+  const [respuestacomics, setRespuestacomics] = useState([]);
   const [searchText, setSearchText] = useState('')
   const [searchedColumn, setSearchedColumn] = useState('')
   const searchInput = useRef()
-  console.log(respuestaregistro);
+  console.log(respuestacomics);
   useEffect(() => {
-    const getlistadoderegistro = async () => {
-      axios.get('http://localhost:3000/Registro/')
+    const getlistadodecomics = async () => {
+      axios.get('http://localhost:3000/Tarjeta/')
         .then((res) => {
           console.log(res.data);
-          setRespuestaregistro(res.data.registro)
+          setRespuestacomics(res.data.tarjeta)
         })
         .catch((error) => {
           console.log(error.data);
         })
     }
-    getlistadoderegistro();
+    getlistadodecomics();
   }, [])
 
 
-  const data = respuestaregistro
+  const data = respuestacomics
 
 
 
@@ -96,75 +96,45 @@ const TablaRegistro = () => {
 
   const columns = [
     {
-      title: 'Nombre',
-      dataIndex: 'nombre',
-      key: 'nombre',
+      title: 'Imagen',
+      dataIndex: 'imagen',
+      key: 'imagen',
       width: '10%',
-      ...getColumnSearchProps('nombre'),
+      // ...getColumnSearchProps('imagen'),
+      render: (imagen) =>{
+        return <img src={imagen} alt="" style={{maxWidth: '150px'}}/>
+      }
     },
     {
-      title: 'Apellido',
-      dataIndex: 'apellido',
-      key: 'apellido',
+      title: 'Titulo',
+      dataIndex: 'titulo',
+      key: 'titulo',
       width: '10%',
-      ...getColumnSearchProps('apellido'),
+      ...getColumnSearchProps('titulo'),
     },
     {
-      title: 'Email',
-      dataIndex: 'email',
-      key: 'email',
-      width: '10%',
-      ...getColumnSearchProps('email'),
+      title: 'Descripcion',
+      dataIndex: 'descripcion',
+      key: 'descripcion',
+      width: '30%',
+      ...getColumnSearchProps('descripcion'),
     },
     {
-      title: 'Dc Comics',
-      dataIndex: 'dcComics',
-      key: 'dcComics',
+      title: 'Cantidad',
+      dataIndex: 'cantidad',
+      key: 'cantidad',
       width: '10%',
-      render: (value) => {
-        return <Switch checked={value} />
-      },
+      ...getColumnSearchProps('cantidad'),
     },
     {
-      title: 'Marvel Comics',
-      dataIndex: 'marvelComics',
-      key: 'marvelComics',
+      title: 'Precio',
+      dataIndex: 'precio',
+      key: 'precio',
       width: '10%',
-      render: (value) => {
-        return <Switch checked={value} />
-      },
+      ...getColumnSearchProps('precio'),
     },
-    {
-      title: 'Dark Horse Comics',
-      dataIndex: 'horseComics',
-      key: 'horseComics',
-      width: '10%',
-      render: (value) => {
-        return <Switch checked={value} />
-      },
-    },
-    {
-      title: 'Image Comics',
-      dataIndex: 'imageComics',
-      key: 'imageComics',
-      width: '10%',
-      render: (value) => {
-        return <Switch checked={value} />
-      },
-    },
-    {
-      title: 'Noticias',
-      dataIndex: 'newsLetter',
-      key: 'newsLetter',
-      width: '10%',
-      render: (value) => {
-      return <Switch checked={value} />
-      },
-    },
-    
-    
   ];
   return <Table columns={columns} dataSource={data} />;
 }
 
-export default TablaRegistro;
+export default TablaComicsConme;

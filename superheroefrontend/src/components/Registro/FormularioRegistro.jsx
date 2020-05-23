@@ -7,9 +7,6 @@ import {
     Form,
     Input,
     Button,
-    Radio,
-    Select,
-    DatePicker,
     Switch,
 } from 'antd';
 
@@ -32,48 +29,29 @@ export default function FormularioRegistro() {
                             onValuesChange={onFormLayoutChange}
                             size={componentSize}
                         >
-                            <Form.Item label="TAMAÑO DEL FORM" name="size" >
-                                <Radio.Group>
-                                    <Radio.Button value="small">Pequeño</Radio.Button>
-                                    <Radio.Button value="middle">Mediano</Radio.Button>
-                                    <Radio.Button value="large">Grande</Radio.Button>
-                                </Radio.Group>
-                            </Form.Item>
                             <Form.Item label="Nombre">
                                 <Input />
                             </Form.Item>
                             <Form.Item label="Apellido">
                                 <Input />
                             </Form.Item>
-                            <Form.Item label="Sexo" >
-                                <Select >
-                                    <Select.Option value="masculino" className='TextoSubmenu'>Masculino</Select.Option>
-                                    <Select.Option value="femenino" className='TextoSubmenu'>Femenino</Select.Option>
-                                    <Select.Option value="nobinario" className='TextoSubmenu'>No binario</Select.Option>
-                                    <Select.Option value="fluido" className='TextoSubmenu'>Género Fluido</Select.Option>
-                                    <Select.Option value="vulcan" className='TextoSubmenu'>Vulcan</Select.Option>
-
-                                </Select>
-                            </Form.Item>
-                            <Form.Item label="Fecha de Nacimiento">
-                                <DatePicker />
-                            </Form.Item>
-                            <Form.Item label="Direccion">
-                                <Input />
-                            </Form.Item>
-                            <Form.Item label="Provincia">
-                                <Input />
-                            </Form.Item>
-                            <Form.Item label="C.P">
-                                <Input />
-                            </Form.Item>
-                            <Form.Item label="Telefono">
-                                <Input />
-                            </Form.Item>
                             <Form.Item label="Email">
                                 <Input />
                             </Form.Item>
-                            <Form.Item label="Recibir Newsletters">
+                            <h5 style={{paddingLeft: '40px', paddingBottom: '20px'}}>Elige tu favorito:</h5>
+                            <Form.Item label="DC Comics">
+                                <Switch />
+                            </Form.Item>
+                            <Form.Item label="Marvel Comics">
+                                <Switch />
+                            </Form.Item>
+                            <Form.Item label="Dark Horse Comics">
+                                <Switch />
+                            </Form.Item>
+                            <Form.Item label="Image Comics">
+                                <Switch />
+                            </Form.Item>
+                            <Form.Item label="Noticias de SUPERHEROE!">
                                 <Switch />
                             </Form.Item>
                             <Form.Item label="Gracias!">
