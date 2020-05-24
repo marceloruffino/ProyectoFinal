@@ -32,13 +32,7 @@ function App() {
             <div >
             <NoticiaResumida />
             </div>
-            <div >
-            <NoticiaResumida />
-            </div>
-            <div >
-            <NoticiaResumida />
-            </div>
-            
+           
       </div>
       <div >
         <img className='img-fluid' src={Divisorio} alt="" style={{ background: '#def2fe' }} />

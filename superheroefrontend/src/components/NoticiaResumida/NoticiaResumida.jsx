@@ -1,41 +1,73 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'antd';
 import { Link, useHistory } from 'react-router-dom';
 import { InfoCircleFilled } from '@ant-design/icons';
+import axios from 'axios';
 
-import News1 from './fotoNoticiaResumida/FanzineHome001.jpg'
+
 
 
 
 export default function NoticiaResumida() {
-  const history= useHistory()
-  const handleNoticia=() => {
-    history.push('noticias/3233')
+// variable
+  const history = useHistory();
+  // variable de estado por que tiene useState
+  const [respuestanoticia, setRespuestaNoticia] = useState([]);
+  console.log(respuestanoticia);
+
+// funcion
+
+  const traerid = (id) => {console.log(id)
+  history.push(`/noticias/${id}`)
   }
-  return (
-    <>
-       
-        <div className="row articles">
-          <div className="col-sm-6 col-md-4 item">
+  
+
+// useEffect es un hook
+  useEffect(() => {
+    const getnoticias = async () => {
+      axios.get("http://localhost:3000/articuloFanzine")
+        .then((res) => {
+          console.log(res.data);
+          setRespuestaNoticia(res.data.articuloFanzine)
+        })
+        .catch((error) => {
+          console.log(error.data);
+        })
+
+    }
+    getnoticias();
+  }, [])
+
+ 
+// aqui comienza el componente
+return (
+  <>
+
+    <div >
+      {
+        respuestanoticia.map((respuesta) => (
+          <div className="">
             <a href="#">
-              <img className="img-fluid" src={News1}></img>
+              <img className="img-fluid" src={respuesta.imagen}></img>
             </a>
-            <h3 className="name">
-            Temporada dos de Doom Patrol
-                </h3>
+            <h4 style={{fontSize: '20px', paddingTop: '10px'}}>
+              {respuesta.titulo}
+            </h4>
             <p className="description">
-            Los inadaptados favoritos de los fanáticos de Crazy Jane (Diane Guerrero - "Orange is the New Black") Cliff Steele / Robotman (Brendan Fraser - "The Mummy"), Larry Trainer / Negative Man (Matt Bomer - "American Horror Story") Rita Farr / Elasti-Woman (April Bowlby - "Two and a Half Men") y Vic Stone / Cyborg (Joivan Wade - "Doctor Who") regresan en la segunda temporada de DOOM PATROL en DC UNIVERSE, con nuevos episodios que debutan todos los jueves.
-                </p>
-                <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '10px'}}>
-            
-                <Button onClick={handleNoticia} shape="round" icon={<InfoCircleFilled />} style={{ display: 'flex', justifyContent: 'center', paddingTop: '6px'}} >
-                </Button>
-             
-        </div>
-     </div>
-     </div>
-    </>
-     
-  );
-}
+              {respuesta.resumen}
+            </p>
+            <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '10px' }}>
+
+              <Button onClick={() => {traerid(respuesta._id)}} shape="round" icon={<InfoCircleFilled />} style={{ display: 'flex', justifyContent: 'center', paddingTop: '6px' }} >
+              </Button>
+
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </>
+
+);
+};

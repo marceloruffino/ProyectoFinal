@@ -1,51 +1,87 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Noticias.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Noticia001 from './AdminNoticiasPhotos/noticia001-1.jpg'
-import Noticia002 from './AdminNoticiasPhotos/noticia001-2.jpg'
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
+
 
 export default function Noticias() {
 
-    const {idNoticia} = useParams();
-    console.log(idNoticia)
-    return (
-        
-            <div className="article-dual-column">
-                <div className="container">
 
-                    <div className="col-md-10 offset-md-1">
-                        <div className="intro">
-                            <h1 className="text-center">Doom Patrol en escena
+    const { id } = useParams();
+    console.log("Noticias -> id", id)
+    
+    const [titulo, setTitulo] = useState('');
+    const [fecha, setFecha] = useState('');
+    const [autor, setAutor] = useState('');
+    const [imagen, setImagen] = useState('');
+    const [imagen2, setImagen2] = useState('');
+    const [descripcion1, setDescripcion1] = useState('');
+    const [descripcion2, setDescripcion2] = useState('');
+
+    // const [respuestanoticia, setRespuestaNoticia] = useState([]);
+    // console.log(respuestanoticia);
+
+    useEffect(() => {
+        const getnoticias = async (e) => {
+            axios.get(`http://localhost:3000/articuloFanzine/${id}`)
+                .then((res) => {
+                    console.log(res.data);
+                    setTitulo(res.data.articuloFanzine.titulo);
+                    setFecha(res.data.articuloFanzine.fecha);
+                    setAutor(res.data.articuloFanzine.autor);
+                    setImagen(res.data.articuloFanzine.imagen);
+                    setImagen2(res.data.articuloFanzine.imagen2);
+                    setDescripcion1(res.data.articuloFanzine.descripcion1);
+                    setDescripcion2(res.data.articuloFanzine.descripcion2)
+                    // setRespuestaNoticia(res.data.articuloFanzine)
+                })
+                .catch((error) => {
+                    console.log(error.data);
+                })
+
+        }
+        getnoticias();
+    }, [])
+    return (
+
+        <div className="article-dual-column">
+            {/* {
+                respuestanoticia.map((respuesta) => ( */}
+                    <div className="container">
+
+                        <div className="col-md-10 offset-md-1">
+                            <div className="intro">
+                                <h1 className="text-center">{titulo}
                                 </h1>
-                            <p className="text-center">
-                                <span className="by">por</span>
-                                <a href="#">Cesar Lopez</a>
-                                <span className="date">Sept 8th, 2020 </span>
-                            </p>
+                                <p className="text-center">
+                                    <span className="by">por</span>
+                                    <a href="#">{autor}</a>
+                                    <span className="date">{fecha} </span>
+                                </p>
+                            </div>
+                            <div className='FotoCenter'>
+                                <img className="img-fluid" src={imagen}></img>
+                            </div>
+                            <div className="textArticulo">
+                                <p>{descripcion1}</p>
+                            </div>
+                            <div className='FotoCenter'>
+                                <img className="img-fluid" src={imagen2}></img>
+                            </div>
+                            <div className="textArticulo">
+                                <p>{descripcion2}
+                                </p>
+                            </div>
                         </div>
-                        <div className='FotoCenter'>
-                            <img className="img-fluid" src={Noticia001}></img>
-                        </div>
-                        <div className="textArticulo">
-                                <p>A re-imagining of one of DC's most beloved group of outcast Super Heroes: Robotman, Negative Man, Elasti-Girl and Crazy Jane, led by modern-day mad scientist Dr. Niles Caulder (The Chief). The Doom Patrol's members each suffered horrible accidents that gave them superhuman abilities--but also left them scarred and disfigured. Traumatized and downtrodden, the team found purpose through The Chief, who brought them together to investigate the weirdest phenomena in existence--and to protect Earth from what they find. Part support group, part Super Hero team, the Doom Patrol is a band of super-powered freaks who fight for a world that wants nothing to do with them. Picking up after the events of Titans, Doom Patrol will find these reluctant heroes in a place they never expected to be, called to action by none other than Cyborg, who comes to them with a mission hard to refuse, but with a warning that is hard to ignore: their lives will never, ever be the same.</p>
-                        </div>
-                        <div className='FotoCenter'>
-                            <img className="img-fluid" src={Noticia002}></img>
-                        </div>
-                        <div className="textArticulo">
-                            <p>Suspendisse vel placerat ligula. Vivamus ac sem lac. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                            posuere cubilia Curae.
-                            </p>
-                        </div>
+
                     </div>
 
-                </div>
+                {/* )) */}
+            {/* } */}
+        </div>
 
 
-            </div>
 
-
-        
     );
-}
+};

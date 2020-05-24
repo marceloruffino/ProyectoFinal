@@ -30,7 +30,7 @@ export default function AddCardConme() {
 
 
       const response = await axios.post(
-        'http://localhost:3000/tarjeta/',
+        'http://localhost:3000/tarjetaConmemorativa/',
         payload
       );
       setRespuestaMensaje(response.data.mensaje);

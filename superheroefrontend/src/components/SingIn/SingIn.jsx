@@ -33,7 +33,7 @@ export default function SignIn() {
               </Link>
           
             <a href="#" 
-            class="forgot">Forgot your email or password?
+            >Forgot your email or password?
             </a>
         </form>
     </div>

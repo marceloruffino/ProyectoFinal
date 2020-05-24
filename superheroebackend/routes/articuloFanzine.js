@@ -26,7 +26,7 @@ const ArticuloFanzineSchema = new Schema({
     type: String,
   },
   
-  subtitulo: {
+  autor: {
     type: String,
   },
 
@@ -77,7 +77,7 @@ const newArticuloFanzine = async (req, res) => {
     _id: new ObjectID(),
     titulo: req.body.titulo,
     fecha: req.body.fecha,
-    subtitulo: req.body.subtitulo,
+    autor: req.body.autor,
     resumen: req.body.resumen,
     imagen: urlImage,
     imagen2:urlImage2,

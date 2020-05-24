@@ -16,10 +16,10 @@ const TablaNoticias = () => {
   console.log(respuestacomics);
   useEffect(() => {
     const getlistadodecomics = async () => {
-      axios.get('http://localhost:3000/Tarjeta/')
+      axios.get('http://localhost:3000/articuloFanzine')
         .then((res) => {
           console.log(res.data);
-          setRespuestacomics(res.data.tarjeta)
+          setRespuestacomics(res.data.articuloFanzine)
         })
         .catch((error) => {
           console.log(error.data);
@@ -96,42 +96,66 @@ const TablaNoticias = () => {
 
   const columns = [
     {
-      title: 'Imagen',
+      title: 'Titulo',
+      dataIndex: 'titulo',
+      key: 'titulo',
+      width: '5%',
+      ...getColumnSearchProps('titulo'),
+    },
+    {
+      title: 'Autor',
+      dataIndex: 'autor',
+      key: 'autor',
+      width: '5%',
+      ...getColumnSearchProps('autor'),
+    },
+    {
+      title: 'Fecha',
+      dataIndex: 'fecha',
+      key: 'fecha',
+      width: '5%',
+      ...getColumnSearchProps('fecha'),
+    },
+    {
+      title: 'Imagen Principal',
       dataIndex: 'imagen',
       key: 'imagen',
-      width: '10%',
+      width: '3%',
       // ...getColumnSearchProps('imagen'),
       render: (imagen) =>{
         return <img src={imagen} alt="" style={{maxWidth: '150px'}}/>
       }
     },
     {
-      title: 'Titulo',
-      dataIndex: 'titulo',
-      key: 'titulo',
-      width: '10%',
-      ...getColumnSearchProps('titulo'),
+      title: 'Descripcion 1',
+      dataIndex: 'descripcion1',
+      key: 'descripcion1',
+      width: '5%',
+      ...getColumnSearchProps('descripcion1'),
     },
     {
-      title: 'Descripcion',
-      dataIndex: 'descripcion',
-      key: 'descripcion',
-      width: '30%',
-      ...getColumnSearchProps('descripcion'),
+      title: 'Imagen Secundaria',
+      dataIndex: 'imagen2',
+      key: 'imagen2',
+      width: '3%',
+      // ...getColumnSearchProps('imagen'),
+      render: (imagen) =>{
+        return <img src={imagen} alt="" style={{maxWidth: '150px'}}/>
+      }
     },
     {
-      title: 'Cantidad',
-      dataIndex: 'cantidad',
-      key: 'cantidad',
-      width: '10%',
-      ...getColumnSearchProps('cantidad'),
+      title: 'Descripcion 2',
+      dataIndex: 'descripcion2',
+      key: 'descripcion2',
+      width: '5%',
+      ...getColumnSearchProps('descripcion2'),
     },
     {
-      title: 'Precio',
-      dataIndex: 'precio',
-      key: 'precio',
-      width: '10%',
-      ...getColumnSearchProps('precio'),
+      title: 'Resumen',
+      dataIndex: 'resumen',
+      key: 'resumen',
+      width: '5%',
+      ...getColumnSearchProps('resumen'),
     },
   ];
   return <Table columns={columns} dataSource={data} />;

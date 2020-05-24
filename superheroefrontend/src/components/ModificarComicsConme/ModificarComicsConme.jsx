@@ -15,17 +15,17 @@ const TablaComicsConme = () => {
   const searchInput = useRef()
   console.log(respuestacomics);
   useEffect(() => {
-    const getlistadodecomics = async () => {
-      axios.get('http://localhost:3000/Tarjeta/')
+    const getlistadodetarjetasconm = async () => {
+      axios.get('http://localhost:3000/tarjetaConmemorativa')
         .then((res) => {
           console.log(res.data);
-          setRespuestacomics(res.data.tarjeta)
+          setRespuestacomics(res.data.tarjetaConme)
         })
         .catch((error) => {
           console.log(error.data);
         })
     }
-    getlistadodecomics();
+    getlistadodetarjetasconm();
   }, [])
 
 
@@ -120,18 +120,18 @@ const TablaComicsConme = () => {
       ...getColumnSearchProps('descripcion'),
     },
     {
-      title: 'Cantidad',
-      dataIndex: 'cantidad',
-      key: 'cantidad',
+      title: 'Fecha',
+      dataIndex: 'fecha',
+      key: 'fecha',
       width: '10%',
-      ...getColumnSearchProps('cantidad'),
+      ...getColumnSearchProps('fecha'),
     },
     {
-      title: 'Precio',
-      dataIndex: 'precio',
-      key: 'precio',
+      title: 'Likes',
+      dataIndex: 'likes',
+      key: 'likes',
       width: '10%',
-      ...getColumnSearchProps('precio'),
+      ...getColumnSearchProps('likes'),
     },
   ];
   return <Table columns={columns} dataSource={data} />;

@@ -133,6 +133,13 @@ const TablaComics = () => {
       width: '10%',
       ...getColumnSearchProps('precio'),
     },
+    {
+      title: 'Likes',
+      dataIndex: 'likes',
+      key: 'likes',
+      width: '10%',
+      ...getColumnSearchProps('likes'),
+    },
   ];
   return <Table columns={columns} dataSource={data} />;
 }
