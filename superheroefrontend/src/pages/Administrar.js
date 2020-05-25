@@ -22,56 +22,56 @@ function App() {
             </h2>
       <div >
         <Link to="agregarcomics">
-          <Button style={{height: '30px'}}shape="round" icon={<FileAddOutlined />} >
+          <Button style={{height: '30px', fontFamily: 'monospace', background: 'black', color:'white'}}shape="round" icon={<FileAddOutlined />} >
             Agregar Comics
             </Button>
         </Link>
       </div>
       <div >
         <Link to="administrarcomics">
-          <Button style={{height: '30px'}}shape="round" icon={<FileAddOutlined />} >
+          <Button style={{height: '30px', fontFamily: 'monospace', background: 'black', color:'white'}}shape="round" icon={<FileAddOutlined />} >
             Administrar Comics
             </Button>
         </Link>
       </div>
       <div >
         <Link to="adminregistros">
-          <Button style={{height: '30px'}}shape="round" icon={<FileAddOutlined />} >
+          <Button style={{height: '30px', fontFamily: 'monospace', background: 'black', color:'white'}}shape="round" icon={<FileAddOutlined />} >
             Administrar Registros
             </Button>
         </Link>
       </div>
       <div >
         <Link to="agregarcardconme">
-          <Button style={{height: '30px'}}shape="round" icon={<FileAddOutlined />} >
+          <Button style={{height: '30px', fontFamily: 'monospace', background: 'black', color:'white'}}shape="round" icon={<FileAddOutlined />} >
             Agregar Comics Conmemorativos
             </Button>
         </Link>
       </div>
       <div >
         <Link to="administrarcomicsconme">
-          <Button style={{height: '30px'}} shape="round" icon={<FileAddOutlined />} >
+          <Button style={{height: '30px', fontFamily: 'monospace', background: 'black', color:'white'}} shape="round" icon={<FileAddOutlined />} >
             Administrar Comics Conmemorativos
             </Button>
         </Link>
       </div>
       <div >
         <Link to="agregarnoticia">
-          <Button style={{height: '30px'}}shape="round" icon={<FileAddOutlined />} >
+          <Button style={{height: '30px', fontFamily: 'monospace', background: 'black', color:'white'}}shape="round" icon={<FileAddOutlined />} >
             Agregar Noticia
             </Button>
         </Link>
       </div>
       <div >
         <Link to="adminitrarnoticia">
-          <Button style={{height: '30px'}}shape="round" icon={<FileAddOutlined />} >
+          <Button style={{height: '30px', fontFamily: 'monospace', background: 'black', color:'white'}}shape="round" icon={<FileAddOutlined />} >
             Administrar Noticia
             </Button>
         </Link>
       </div>
     </div>
       <div>
-          <img  style={{background: 'black'}}className='img-fluid' src={Pie} alt="" />
+          <img  style={{background: 'black', fontFamily: 'monospace'}}className='img-fluid' src={Pie} alt="" />
         </div>
    </div>   
   );

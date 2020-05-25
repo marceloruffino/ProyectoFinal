@@ -32,7 +32,7 @@ export default function SignIn() {
                 </button>
               </Link>
           
-            <a href="#" 
+            <a style={{color: 'grey', fontSize: '12px', padding: '10px'}}href="#" 
             >Forgot your email or password?
             </a>
         </form>

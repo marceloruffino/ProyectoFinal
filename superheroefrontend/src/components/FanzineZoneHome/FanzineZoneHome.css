@@ -35,6 +35,15 @@
   padding: 10px;
   margin-bottom: 0px;
   }
+  .textoTituloNoticias{
+    background-color: #def2fe;
+    font-family: monospace;
+    font-size: 14px;
+    color: whitesmoke;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 0px;
+  }
 
   @media (max-width:767px) {
     .article-list h2 {

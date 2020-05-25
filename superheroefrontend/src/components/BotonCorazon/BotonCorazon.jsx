@@ -1,5 +1,5 @@
 //@ts-check
-import React, { useState, useEffect, } from "react";
+import React, { useState } from "react";
 import { HeartOutlined , HeartFilled} from '@ant-design/icons';
 import axios from 'axios';
 
@@ -7,24 +7,12 @@ export default function HeartLikes({initialValue, idComics}) {
   const [likes, setLikes] = useState(initialValue);
   const [updateLikes, setUpdateLikes] = useState(true);
 
-  // const getlikes = () => {
-  //   axios.get(`http://localhost:3000/tarjeta/${id}`)
-  //     .then((res) => { setLikes(res.data.tarjeta.likes) })
-  //     .catch((error) => {
-  //       console.log(error.data);
-  //     })
-
-  // };
   
 
-  useEffect(() => {
- 
-    // getlikes()
 
-  }, [])
   const handlelikes = (id) => {
     const likestotales = likes + 1
-    axios.put(`http://localhost:3000/tarjeta/${idComics}`, {
+    axios.put(`http://localhost:3000/articuloComics/${idComics}`, {
       likes: likestotales
 
     })
@@ -37,7 +25,7 @@ export default function HeartLikes({initialValue, idComics}) {
 
   const handledislikes = (id) => {
     const likestotales = likes - 1
-    axios.put(`http://localhost:3000/tarjeta/${idComics}`, {
+    axios.put(`http://localhost:3000/articuloComics/${idComics}`, {
       likes: likestotales
 
     })

@@ -1,6 +1,10 @@
 //@ts-check
 import React from 'react';
 import Noticias from '../components/Noticias/Noticias';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Pie from '../components/FanzineZoneHome/fotoFanzineHome/Pie.png';
+
 
 
 
@@ -8,11 +12,14 @@ import Noticias from '../components/Noticias/Noticias';
 function NoticiasFanzine() {
 
   return (
-<div>
-    
+    <>
+<div>   
       <Noticias />
-    </div>
-   
+  </div>
+    <div>
+    <img style={{background: '#def2fe'}} className='img-fluid' src={Pie} alt="" />
+  </div>
+   </>
   );
 }
 

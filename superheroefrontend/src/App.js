@@ -20,6 +20,8 @@ import AgregarNoticia from "./pages/AgregarNoticia";
 import AdministrarNoticia from "./pages/AdministrarNoticia";
 import Noticias from "./pages/Noticias";
 import VideoFondoPantalla from "./pages/VideoFondoPantalla";
+import ArticuloComics from "./pages/ArticuloComics";
+import ArticuloComicsConme from "./pages/ArticuloComicsConme";
 import {
   BrowserRouter as Router,
   Switch,
@@ -40,6 +42,12 @@ export default function App() {
         <Switch>
         <Route path="/videofondopantalla">
           <VideoFondoPantalla />
+          </Route>
+        <Route path="/articulocomicsconme/:id">
+          <ArticuloComicsConme />
+          </Route>
+        <Route path="/articulocomics/:id">
+          <ArticuloComics />
           </Route>
         <Route path="/noticias/:id">
           <Noticias />
@@ -83,8 +91,11 @@ export default function App() {
           <Route path="/bookshop">
             <BookShop />
           </Route>
-          <Route path="/">
+          <Route path="/home">
             <Home />
+          </Route>
+          <Route path="/">
+            <VideoFondoPantalla />
           </Route>
         </Switch>
       </div>

@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 
+
 export default function Noticias() {
 
 
@@ -19,8 +20,6 @@ export default function Noticias() {
     const [descripcion1, setDescripcion1] = useState('');
     const [descripcion2, setDescripcion2] = useState('');
 
-    // const [respuestanoticia, setRespuestaNoticia] = useState([]);
-    // console.log(respuestanoticia);
 
     useEffect(() => {
         const getnoticias = async (e) => {
@@ -34,7 +33,6 @@ export default function Noticias() {
                     setImagen2(res.data.articuloFanzine.imagen2);
                     setDescripcion1(res.data.articuloFanzine.descripcion1);
                     setDescripcion2(res.data.articuloFanzine.descripcion2)
-                    // setRespuestaNoticia(res.data.articuloFanzine)
                 })
                 .catch((error) => {
                     console.log(error.data);
@@ -46,8 +44,6 @@ export default function Noticias() {
     return (
 
         <div className="article-dual-column">
-            {/* {
-                respuestanoticia.map((respuesta) => ( */}
                     <div className="container">
 
                         <div className="col-md-10 offset-md-1">
@@ -70,15 +66,13 @@ export default function Noticias() {
                                 <img className="img-fluid" src={imagen2}></img>
                             </div>
                             <div className="textArticulo">
-                                <p>{descripcion2}
+                                <p style={{paddingBottom: '30px', marginBottom: '10px', borderBottom: '1px solid' }} >{descripcion2}
                                 </p>
                             </div>
                         </div>
 
                     </div>
 
-                {/* )) */}
-            {/* } */}
         </div>
 
 

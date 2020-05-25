@@ -3,8 +3,9 @@ var router = express.Router();
 
 const tarjetaRouter = require('./tarjeta');
 const registroRouter = require('./registro');
-const conmeRouter = require('./tarjetaConmemorativa');
+const conmeRouter = require('./articuloComicsConme');
 const articuloRouter = require('./articuloFanzine');
+const comicsRouter = require('./articuloComics');
 
 
 /* GET home page. */
@@ -14,7 +15,8 @@ router.get('/', function(req, res, next) {
 
 router.use('/tarjeta', tarjetaRouter);
 router.use('/registro', registroRouter);
-router.use('/tarjetaConmemorativa', conmeRouter);
+router.use('/articuloComicsConme', conmeRouter);
 router.use('/articuloFanzine', articuloRouter);
+router.use('/articuloComics', comicsRouter);
 
 module.exports = router;

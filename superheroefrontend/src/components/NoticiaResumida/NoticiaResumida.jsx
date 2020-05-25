@@ -1,7 +1,8 @@
+//@ts-check
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'antd';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { InfoCircleFilled } from '@ant-design/icons';
 import axios from 'axios';
 
@@ -47,7 +48,7 @@ return (
     <div >
       {
         respuestanoticia.map((respuesta) => (
-          <div className="">
+          <div className="" key={respuesta._id}>
             <a href="#">
               <img className="img-fluid" src={respuesta.imagen}></img>
             </a>
@@ -57,7 +58,7 @@ return (
             <p className="description">
               {respuesta.resumen}
             </p>
-            <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '10px' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '30px' }}>
 
               <Button onClick={() => {traerid(respuesta._id)}} shape="round" icon={<InfoCircleFilled />} style={{ display: 'flex', justifyContent: 'center', paddingTop: '6px' }} >
               </Button>

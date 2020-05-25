@@ -1,7 +1,6 @@
 //@ts-check
 import React from 'react';
 import TituloFanzine from '../components/TituloFanzine/TituloFanzine';
-import FanzineZoneHome from '../components/FanzineZoneHome/FanzineZoneHome';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Pie from '../components/FanzineZoneHome/fotoFanzineHome/Pie.png';
 import Divisorio from '../components/FanzineZoneHome/fotoFanzineHome/divisorio3.png';
@@ -12,6 +11,8 @@ import Video001 from '../components/assets/videos/DcVideo.mov';
 import Video002 from '../components/assets/videos/MarvelVideo.mov';
 import { Player } from 'video-react';
 import "../components/FanzineZoneHome/FanzineZoneHome.css";
+import '../App.css'
+import '../components/Cards/Card.css'
 
 
 
@@ -22,19 +23,25 @@ import NoticiaResumida from '../components/NoticiaResumida/NoticiaResumida';
 function App() {
   return (
 
-
-    <div>
+<>
+  
 
       <div className='TituloFanzineZone'>
         <TituloFanzine />
-      </div>
-      <div className='NoticiaResumida'>
+      </div >
+<div className='textoTituloNoticias' >
+<h2 >
+          Noticias
+            </h2>
+</div>
+
+      <div className='NoticiaResumida' >
             <div >
             <NoticiaResumida />
             </div>
            
       </div>
-      <div >
+      <div  >
         <img className='img-fluid' src={Divisorio} alt="" style={{ background: '#def2fe' }} />
       </div>
       <div className='fondoDcVsMarvel'>
@@ -74,17 +81,17 @@ La serie crossover especial enfrentó a los superhéroes de Marvel Comics contra
                 </h2>
           <p className='textoDcVsMarvel'>Dos Hermanos divinos que personifican los universos DC y Marvel cada uno se dan cuenta de la existencia del otro y se desafían entre sí a una serie de duelos que involucran a los respectivos superhéroes de cada universo. El universo perdedor dejaría de existir. La historia tenía un componente "fuera del universo" en que los resultados de las batallas primarias estaban determinados por los votos de los lectores.</p>
         </div>
-        <div >
-          <div className='CardsConmemorativos'>
+        <div className='CardsConmemorativos'>
+          
             <TarjetaConmemorativa />
-          </div>
+          
         </div>
         <div >
           <img className='img-fluid' src={Pie} alt="" style={{ background: 'black' }} />
         </div>
 
       </div>
-    </div>
+   </>
 
   );
 }

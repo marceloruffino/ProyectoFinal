@@ -5,9 +5,10 @@ import "./NavBar.css";
 import LogoBarra from './logo/superHeroLogoBarra.png'
 
 const menu = [
+  
   {
     name: "HOME",
-    to: "/",
+    to: "/home",
   },
   {
     name: "BOOKSHOP",
