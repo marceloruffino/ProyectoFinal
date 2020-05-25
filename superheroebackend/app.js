@@ -19,10 +19,11 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use('/imagenes', express.static('imagenes'));
+// app.use('/imagenes', express.static('imagenes'));
 app.use('/imagenesConmemorativas', express.static('imagenesConmemorativas'));
 app.use('/imagenesFanzine', express.static('imagenesFanzine'));
 app.use('/imagenesRegistro', express.static('imagenesRegistro'));
+app.use('/imagenesComics', express.static('imagenesComics'));
 app.use(cors());
 app.options("*", cors());
 
