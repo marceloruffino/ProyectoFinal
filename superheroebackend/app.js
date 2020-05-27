@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/nuevoSH', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://barcelona1970:barcelona1970@cluster0-uwlgp.mongodb.net/SuperHero?retryWrites=true&w=majority', {useNewUrlParser: true});
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const cors = require ("cors");
