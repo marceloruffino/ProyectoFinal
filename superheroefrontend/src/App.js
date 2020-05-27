@@ -22,6 +22,7 @@ import Noticias from "./pages/Noticias";
 import VideoFondoPantalla from "./pages/VideoFondoPantalla";
 import ArticuloComics from "./pages/ArticuloComics";
 import ArticuloComicsConme from "./pages/ArticuloComicsConme";
+import EditarComics from "./pages/EditarComics";
 import {
   BrowserRouter as Router,
   Switch,
@@ -66,6 +67,9 @@ export default function App() {
           </Route>
         <Route path="/agregarnoticia">
           <AgregarNoticia />
+          </Route>
+        <Route path="/editarcomics">
+          <EditarComics />
           </Route>
         <Route path="/administrarcomics">
           <AdministrarComics />

@@ -157,6 +157,19 @@ const TablaNoticias = () => {
       width: '5%',
       ...getColumnSearchProps('resumen'),
     },
+    {
+      title: 'Modificar Noticia',
+      dataIndex: '',
+      key: 'x',
+      render: () => <a>Modificar</a>,
+    },
+    {
+      title: 'Borrar Noticia',
+      dataIndex: '',
+      key: 'x',
+      render: () => <a>BOrrar</a>,
+
+    },
   ];
   return <Table columns={columns} dataSource={data} />;
 }

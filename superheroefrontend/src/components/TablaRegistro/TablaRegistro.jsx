@@ -161,7 +161,14 @@ const TablaRegistro = () => {
       return <Switch checked={value} />
       },
     },
-    
+ 
+    {
+      title: 'Borrar Registro',
+      dataIndex: '',
+      key: 'x',
+      render: () => <a>Borrar</a>,
+
+    },
     
   ];
   return <Table columns={columns} dataSource={data} />;

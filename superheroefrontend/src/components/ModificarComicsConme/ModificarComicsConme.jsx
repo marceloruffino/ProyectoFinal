@@ -16,10 +16,10 @@ const TablaComicsConme = () => {
   console.log(respuestacomics);
   useEffect(() => {
     const getlistadodetarjetasconm = async () => {
-      axios.get('http://localhost:3000/tarjetaConmemorativa')
+      axios.get('http://localhost:3000/articulocomicsconme')
         .then((res) => {
           console.log(res.data);
-          setRespuestacomics(res.data.tarjetaConme)
+          setRespuestacomics(res.data.articuloComicsConme)
         })
         .catch((error) => {
           console.log(error.data);
@@ -96,28 +96,11 @@ const TablaComicsConme = () => {
 
   const columns = [
     {
-      title: 'Imagen',
-      dataIndex: 'imagen',
-      key: 'imagen',
-      width: '10%',
-      // ...getColumnSearchProps('imagen'),
-      render: (imagen) =>{
-        return <img src={imagen} alt="" style={{maxWidth: '150px'}}/>
-      }
-    },
-    {
       title: 'Titulo',
       dataIndex: 'titulo',
       key: 'titulo',
       width: '10%',
       ...getColumnSearchProps('titulo'),
-    },
-    {
-      title: 'Descripcion',
-      dataIndex: 'descripcion',
-      key: 'descripcion',
-      width: '30%',
-      ...getColumnSearchProps('descripcion'),
     },
     {
       title: 'Fecha',
@@ -127,12 +110,60 @@ const TablaComicsConme = () => {
       ...getColumnSearchProps('fecha'),
     },
     {
-      title: 'Likes',
-      dataIndex: 'likes',
-      key: 'likes',
+      title: 'Autor',
+      dataIndex: 'autor',
+      key: 'autor',
       width: '10%',
-      ...getColumnSearchProps('likes'),
+      ...getColumnSearchProps('autor'),
     },
+
+    {
+      title: 'Imagen Principal',
+      dataIndex: 'imagen',
+      key: 'imagen',
+      width: '10%',
+      // ...getColumnSearchProps('imagen'),
+      render: (imagen) =>{
+        return <img src={imagen} alt="" style={{maxWidth: '150px'}}/>
+      }
+    },
+    {
+      title: 'Texto 1',
+      dataIndex: 'descripcion1',
+      key: 'descripcion1',
+      width: '30%',
+      ...getColumnSearchProps('descripcion1'),
+    },
+    {
+      title: 'Imagen Secundaria',
+      dataIndex: 'imagen2',
+      key: 'imagen2',
+      width: '10%',
+      // ...getColumnSearchProps('imagen'),
+      render: (imagen2) =>{
+        return <img src={imagen2} alt="" style={{maxWidth: '150px'}}/>
+      }
+    },
+    {
+      title: 'Texto 2',
+      dataIndex: 'descripcion2',
+      key: 'descripcion2',
+      width: '30%',
+      ...getColumnSearchProps('descripcion2'),
+    },
+    {
+    title: 'Modificar Comics',
+    dataIndex: '',
+    key: 'x',
+    render: () => <a>Modificar</a>,
+  },
+  {
+    title: 'Borrar Comics',
+    dataIndex: '',
+    key: 'x',
+    render: () => <a>Borrar</a>,
+  },
+    
   ];
   return <Table columns={columns} dataSource={data} />;
 }

@@ -21,7 +21,8 @@ export default function AddNews() {
       e.preventDefault();
       setLoading(true);
       const payload = new FormData();
-      payload.append("imagen", picture);
+      payload.append("imagen", picture[0]);
+      payload.append("imagen", picture[1]);
       payload.append("titulo", titulo.toString());
       payload.append("fecha", fecha.toString());
       payload.append("autor", autor.toString());
@@ -47,10 +48,10 @@ export default function AddNews() {
   };
 
   const handlePicture = (e) => {
-    setPicture(e.target.files[0]);
+    setPicture(e.target.files);
   };
 
-  const imageURL = picture && URL.createObjectURL(picture);
+  // const imageURL = picture && URL.createObjectURL(picture);
 
   return (
     <div>
@@ -67,7 +68,7 @@ export default function AddNews() {
           className='FormularioAgregar'
           onSubmit={handleSubmit}>
           <label >Agregar Imagenes</label>
-          {picture && <img src={imageURL} style={{ width: 200 }} />}
+          {/* {picture && <img src={imageURL} style={{ width: 200 }} />} */}
           <input
             type="file"
             multiple

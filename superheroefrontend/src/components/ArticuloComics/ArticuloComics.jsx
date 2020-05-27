@@ -70,7 +70,7 @@ export default function ArticuloComics() {
                                 <img className="img-fluid" src={imagen2}></img>
                             </div>
                             <div className="textArticulo">
-                                <p>{descripcion2}
+                                <p style={{paddingBottom: '30px', marginBottom: '10px', borderBottom: '1px solid' }}>{descripcion2}
                                 </p>
                             </div>
                         </div>

@@ -1,6 +1,7 @@
 //@ts-check
 import React from 'react';
 import ArticuloComics from '../components/ArticuloComics/ArticuloComics';
+import Pie from '../components/FanzineZoneHome/fotoFanzineHome/Pie.png';
 
 
 
@@ -8,11 +9,14 @@ import ArticuloComics from '../components/ArticuloComics/ArticuloComics';
 function ArticuloComicFull() {
 
   return (
-<div>
-    
+    <>
+    <div>
       <ArticuloComics />
     </div>
-   
+      <div>
+      <img style={{background: '#def2fe'}} className='img-fluid' src={Pie} alt="" />
+    </div>
+   </>
   );
 }
 
