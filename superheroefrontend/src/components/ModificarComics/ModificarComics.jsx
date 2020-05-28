@@ -189,7 +189,7 @@ const TablaComics = () => {
 
     },
   ];
-  return <Table columns={columns} dataSource={data} />;
+  return <Table columns={columns} dataSource={data} scroll={{x:800}}/>;
 }
 
 export default TablaComics;

@@ -114,6 +114,8 @@ router.put("/:id",upload.array('imagen', 2), async(req, res) => {
   const articuloComicsModificada = req.body;
   articuloComicsModificada.imagen=urlImage
   articuloComicsModificada['imagen2']=urlImage2
+  
+  
   try {
     const respuesta =  await ArticuloComicsModel.findByIdAndUpdate(id,articuloComicsModificada);
     res.json({ mensaje: "Articulo Comics modificado", articuloComics: respuesta });

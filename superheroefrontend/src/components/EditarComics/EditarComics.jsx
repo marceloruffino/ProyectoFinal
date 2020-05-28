@@ -27,7 +27,7 @@ export default function EditList() {
         const response = await axios.get(
           `http://localhost:3000/articuloComics/${id}`
         );
-        const {imagen, imagen2, titulo, fecha, autor, descripcion1, descripcion2, resumen, cantidad, precio} = response.data.articuloComics;
+        const { imagen, imagen2, titulo, fecha, autor, descripcion1, descripcion2, resumen, cantidad, precio } = response.data.articuloComics;
         setImagen(imagen)
         setImagen2(imagen2)
         setTitulo(titulo)
@@ -46,139 +46,140 @@ export default function EditList() {
   }, []);
 
 
-    const handleSubmit = async (e) => {
-      try {
-        e.preventDefault();
-        setLoading(true);
-        const payload = new FormData();
-        picture && picture[0] && payload.append("imagen", picture[0]);
-        picture && picture[1] && payload.append("imagen", picture[1]);
-        payload.append("titulo", titulo.toString());
-        payload.append("fecha", fecha.toString());
-        payload.append("autor", autor.toString());
-        payload.append("descripcion1", descripcion1.toString());
-        payload.append("descripcion2", descripcion2.toString());
-        payload.append("resumen", resumen.toString());
-        payload.append("cantidad", cantidad.toString());
-        payload.append("precio", precio.toString());
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      setLoading(true);
+      const payload = new FormData();
+      picture && picture[0] && payload.append("imagen", picture[0]);
+      picture && picture[1] && payload.append("imagen", picture[1]);
+      payload.append("titulo", titulo.toString());
+      payload.append("fecha", fecha.toString());
+      payload.append("autor", autor.toString());
+      payload.append("descripcion1", descripcion1.toString());
+      payload.append("descripcion2", descripcion2.toString());
+      payload.append("resumen", resumen.toString());
+      payload.append("cantidad", cantidad.toString());
+      payload.append("precio", precio.toString());
 
-        const response = await axios.put(
-          `http://localhost:3000/articuloComics/${id}`,
-          payload
-        );
-        setRespuestaMensaje(response.data.mensaje);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setLoading(false);
-      }
-    };
+      const response = await axios.put(
+        `http://localhost:3000/articuloComics/${id}`,
+        payload
+      );
+      setRespuestaMensaje(response.data.mensaje);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    const handlePicture = (e) => {
-      setPicture(e.target.files);
-      setImagen('')
-      setImagen2('')
-    };
+  const handlePicture = (e) => {
+    setPicture(e.target.files);
+    setImagen('')
+    setImagen2('')
+  };
 
-    const imageURL = imagen || (picture && URL.createObjectURL(picture[0]));
-    const imageURL2 = imagen2 || (picture && URL.createObjectURL(picture[1]));
+  const imageURL = imagen || (picture && URL.createObjectURL(picture[0]));
+  const imageURL2 = imagen2 || (picture && URL.createObjectURL(picture[1]));
 
-    return (
-      <div>
+  return (
+    <div>
+      <div >
+        <form
+          className='FormularioAgregar'
+          onSubmit={handleSubmit}>
+          <label >Imagenes</label>
+          <div style={{ display: 'flex', padding: '5px' }}>
+
+            <img src={imageURL} style={{ width: 200 }} />
+            <img src={imageURL2} style={{ width: 200 }} />
+          </div>
+          <input
+            type="file"
+            multiple
+            onChange={handlePicture}
+          />
+          <br></br>
+          <label >Titulo</label>
+          <input
+            type="text"
+            value={titulo}
+            onChange={(e) => setTitulo(e.target.value)}
+
+          />
+          <br></br>
+
+          <label >Fecha</label>
+          <input
+            type="text"
+            value={fecha}
+            onChange={(e) => setFecha(e.target.value)}
+
+          />
+          <br></br>
+          <label >Autor</label>
+          <input
+            type="text"
+            value={autor}
+            onChange={(e) => setAutor(e.target.value)}
+
+          />
+          <br></br>
+          <label >Texto Resumido</label>
+          <textarea
+            type="text"
+            value={resumen}
+            onChange={(e) => setResumen(e.target.value)}
+
+          ></textarea>
+
+          <label>Texto Principal</label>
+          <textarea
+            type="text"
+            value={descripcion1}
+            onChange={(e) => setDescripcion1(e.target.value)}
+
+          ></textarea>
+          <br></br>
+          <label>Texto Secundario</label>
+          <textarea
+            type="text"
+            value={descripcion2}
+            onChange={(e) => setDescripcion2(e.target.value)}
+
+          ></textarea>
 
 
-        <div >
-          <form
-            className='FormularioAgregar'
-            onSubmit={handleSubmit}>
-            <label >Agregar Imagen</label>
-             <img src={imageURL} style={{ width: 200 }} />
-             <img src={imageURL2} style={{ width: 200 }} />
-            <input
-              type="file"
-              multiple
-              onChange={handlePicture}
-            />
-            <br></br>
-            <label >Titulo</label>
-            <input
-              type="text"
-              value={titulo}
-              onChange={(e) => setTitulo(e.target.value)}
-              required
-            />
-            <br></br>
+          <br></br>
+          <label >Cantidad</label>
+          <input
+            type="number"
+            value={cantidad}
+            onChange={(e) => setCantidad(e.target.value)}
 
-            <label >Fecha</label>
-            <input
-              type="text"
-              value={fecha}
-              onChange={(e) => setFecha(e.target.value)}
-              required
-            />
-            <br></br>
-            <label >Autor</label>
-            <input
-              type="text"
-              value={autor}
-              onChange={(e) => setAutor(e.target.value)}
-              required
-            />
-            <br></br>
-            <label >Texto Resumido</label>
-            <textarea
-              type="text"
-              value={resumen}
-              onChange={(e) => setResumen(e.target.value)}
-              required
-            ></textarea>
+          />
+          <br></br>
+          <label >Precio</label>
+          <input
+            type="number"
+            value={precio}
+            onChange={(e) => setPrecio(e.target.value)}
 
-            <label>Texto Principal</label>
-            <textarea
-              type="text"
-              value={descripcion1}
-              onChange={(e) => setDescripcion1(e.target.value)}
-              required
-            ></textarea>
-            <br></br>
-            <label>Texto Secundario</label>
-            <textarea
-              type="text"
-              value={descripcion2}
-              onChange={(e) => setDescripcion2(e.target.value)}
-              required
-            ></textarea>
+          />
+          <br></br>
 
+          {loading ? (
+            <span >Loading...</span>
+          ) : (
+              <button className=" bg-blue-700 rounded p-2" type="submit">
+                Modificar
+              </button>
+            )}
+          <p className="text-white">{respuestaMensaje}</p>
 
-            <br></br>
-            <label >Cantidad</label>
-            <input
-              type="number"
-              value={cantidad}
-              onChange={(e) => setCantidad(e.target.value)}
-              required
-            />
-            <br></br>
-            <label >Precio</label>
-            <input
-              type="number"
-              value={precio}
-              onChange={(e) => setPrecio(e.target.value)}
-              required
-            />
-            <br></br>
-
-            {loading ? (
-              <span >Loading...</span>
-            ) : (
-                <button className=" bg-blue-700 rounded p-2" type="submit">
-                  Modificar
-                </button>
-              )}
-            <p className="text-white">{respuestaMensaje}</p>
-
-          </form>
-        </div>
+        </form>
       </div>
-    );
-  }
+    </div>
+  );
+}
