@@ -15,25 +15,30 @@
   }
   
   .fondoDcVsMarvel{
-  text-align: center;
+  
   background-color: black;
+  
+  justify-content: center;
+  text-align: center;
   }
 
   .tituloDcVsMarvel{
     font-family: monospace;
     font-size: 35px;
+    
+    text-align: center;
     color: whitesmoke;
-  text-align: center;
   padding: 10px;
   margin-bottom: 0px;
   }
   .textoDcVsMarvel{
     font-family: monospace;
     font-size: 14px;
+    display: inline-block;
     color: whitesmoke;
-  text-align: center;
-  padding: 10px;
-  margin-bottom: 0px;
+    width: 1000px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
   }
   .textoTituloNoticias{
     background-color: #def2fe;

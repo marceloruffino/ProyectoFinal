@@ -9,6 +9,9 @@ import CaruselFotosMovil from '../components/Carrousel/CarouselMovil';
 import CaruselFotosRemeras from '../components/Carrousel/CarouselRemeras';
 import CaruselFotosTazas from '../components/Carrousel/CarouselTazas';
 import Pie from '../components/FanzineZoneHome/fotoFanzineHome/Pie.png';
+import Oferta from '../components/Carrousel/MD20_Feature_D_EXT.jpg'
+import Oferta2 from '../components/Carrousel/MD20_BF_D.jpg'
+
 
 
 
@@ -23,15 +26,15 @@ function App() {
       </div>
 
       <div className='MerchFondo'>
-      <div>
-        <h2 style={{fontFamily: 'monospace', textAlign: 'center', background: '#fedbe2'}}>
+        <div>
+          <h2 style={{ fontFamily: 'monospace', textAlign: 'center', background: '#fedbe2' }}>
             COLECCIONABLES
             </h2>
-            <br></br>
-       <div>
-       <p style={{textAlign: 'center', fontFamily: 'monospace', fontSize: '16', color: 'Black', padding: '10'}}> 
-         En la seccion de Coleccionables encontras estatuas esculpidas por artistas famosos en colaboracion con Dc o Marvel, decora tu escritorio, libreria con la mas varia coleccion y diversos tamaños. </p>
-         </div>
+          <br></br>
+          <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
+            <p style={{ width: '1000px', textAlign: 'center', fontFamily: 'monospace', fontSize: '16', color: 'Black', padding: '10' }}>
+              En la seccion de Coleccionables encontras estatuas esculpidas por artistas famosos en colaboracion con Dc o Marvel, decora tu escritorio, libreria con la mas varia coleccion y diversos tamaños. </p>
+          </div>
         </div>
         <div className='CarouselMerch'>
           <CaruselFotos />
@@ -39,16 +42,16 @@ function App() {
       </div>
 
       <div className='MerchFondo'>
-      <div>
-        <h2 style={{fontFamily: 'monospace', textAlign: 'center', background: '#fedbe2'}}>
+        <div>
+          <h2 style={{ fontFamily: 'monospace', textAlign: 'center', background: '#fedbe2' }}>
             ACCESORIOS
             </h2>
-            <br></br>
-       <div>
-       <p style={{textAlign: 'center', fontFamily: 'monospace', fontSize: '16', color: 'Black', padding: '10'}}> 
-         En la seccion de Accesorios encontras estatuas esculpidas por artistas famosos en colaboracion con Dc o Marvel, decora tu escritorio, libreria con la mas varia coleccion y diversos tamaños. </p>
-         </div>
-            
+          <br></br>
+          <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
+            <p style={{ width: '1000px', textAlign: 'center', fontFamily: 'monospace', fontSize: '16', color: 'Black', padding: '10' }}>
+              En la seccion de Accesorios encontras estatuas esculpidas por artistas famosos en colaboracion con Dc o Marvel, decora tu escritorio, libreria con la mas varia coleccion y diversos tamaños. </p>
+          </div>
+
         </div>
         <div className='CarouselMerch'>
           <CaruselFotosAccesorios />
@@ -56,51 +59,59 @@ function App() {
       </div>
 
       <div className='MerchFondo'>
-      <div>
-        <h2 style={{fontFamily: 'monospace', textAlign: 'center', background: '#fedbe2'}}>
-            CARCASAS
+        <div>
+          <img className='img-fluid' src={Oferta} alt="" />
+        </div>
+        <div className='MerchFondo'>
+          <div >
+            <h2 style={{ fontFamily: 'monospace', textAlign: 'center', background: '#fedbe2' }}>
+              REMERAS
             </h2>
             <br></br>
-       <div>
-       <p style={{textAlign: 'center', fontFamily: 'monospace', fontSize: '16', color: 'Black', padding: '10'}}> 
-         En la seccion de Carcasas encontras estatuas esculpidas por artistas famosos en colaboracion con Dc o Marvel, decora tu escritorio, libreria con la mas varia coleccion y diversos tamaños. </p>
-         </div>
+            <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
+              <p style={{ width: '1000px', textAlign: 'center', fontFamily: 'monospace', fontSize: '16', color: 'Black', padding: '10' }}>
+                En la seccion de Remeras encontras estatuas esculpidas por artistas famosos en colaboracion con Dc o Marvel, decora tu escritorio, libreria con la mas varia coleccion y diversos tamaños. </p>
+            </div>
+          </div>
+          <div className='CarouselMerch'>
+            <CaruselFotosRemeras />
+          </div>
+        </div>
+        <div>
+          <h2 style={{ fontFamily: 'monospace', textAlign: 'center', background: '#fedbe2' }}>
+            CARCASAS
+            </h2>
+          <br></br>
+          <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
+            <p style={{ width: '1000px', textAlign: 'center', fontFamily: 'monospace', fontSize: '16', color: 'Black', padding: '10' }}>
+              En la seccion de Carcasas encontras estatuas esculpidas por artistas famosos en colaboracion con Dc o Marvel, decora tu escritorio, libreria con la mas varia coleccion y diversos tamaños. </p>
+          </div>
         </div>
         <div className='CarouselMerch'>
           <CaruselFotosMovil />
         </div>
       </div>
 
-      <div className='MerchFondo'>
-      <div>
-        <h2 style={{fontFamily: 'monospace', textAlign: 'center', background: '#fedbe2'}}>
-            REMERAS
-            </h2>
-            <br></br>
-       <div>
-       <p style={{textAlign: 'center', fontFamily: 'monospace', fontSize: '16', color: 'Black', padding: '10'}}> 
-         En la seccion de Remeras encontras estatuas esculpidas por artistas famosos en colaboracion con Dc o Marvel, decora tu escritorio, libreria con la mas varia coleccion y diversos tamaños. </p>
-         </div>
-        </div>
-        <div className='CarouselMerch'>
-          <CaruselFotosRemeras />
-        </div>
-      </div>
+
 
       <div className='MerchFondo'>
-        <div>
-        <h2 style={{fontFamily: 'monospace', textAlign: 'center', background: '#fedbe2'}}>
+        <div >
+          <h2 style={{ fontFamily: 'monospace', textAlign: 'center', background: '#fedbe2' }}>
             TAZAS
             </h2>
-            <br></br>
-       <div>
-       <p style={{textAlign: 'center', fontFamily: 'monospace', fontSize: '16', color: 'Black', padding: '10'}}> 
-         En la seccion de Tazas encontras estatuas esculpidas por artistas famosos en colaboracion con Dc o Marvel, decora tu escritorio, libreria con la mas varia coleccion y diversos tamaños. </p>
-         </div>
+          <br></br>
+          <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
+            <p style={{ width: '1000px', textAlign: 'center', fontFamily: 'monospace', fontSize: '16', color: 'Black', padding: '10' }}>
+              En la seccion de Tazas encontras estatuas esculpidas por artistas famosos en colaboracion con Dc o Marvel, decora tu escritorio, libreria con la mas varia coleccion y diversos tamaños. </p>
+          </div>
         </div>
         <div className='CarouselMerch'>
           <CaruselFotosTazas />
         </div>
+        <div>
+          <img className='img-fluid' src={Oferta2} alt="" />
+        </div>
+
         <div>
           <img className='img-fluid' src={Pie} alt="" />
         </div>

@@ -7,8 +7,11 @@ import 'antd/dist/antd.css';
 import { Table, Input, Button, Space } from 'antd';
 import Highlighter from 'react-highlight-words';
 import { SearchOutlined } from '@ant-design/icons';
+import { useHistory } from 'react-router-dom';
 
 const TablaComics = () => {
+  const history = useHistory();
+
   const [respuestacomics, setRespuestacomics] = useState([]);
   const [searchText, setSearchText] = useState('')
   const [searchedColumn, setSearchedColumn] = useState('')
@@ -93,6 +96,11 @@ const TablaComics = () => {
     clearFilters();
     setSearchText('')
   };
+  const handleEdit = (id) => {
+  console.log("handleEdit -> id", id)
+    
+    history.push(`/editarcomics/${id}`)
+  };
 
   const columns = [
     {
@@ -166,9 +174,12 @@ const TablaComics = () => {
     },
     {
       title: 'Modificar Comics',
-      dataIndex: '',
+      dataIndex: '_id',
       key: 'x',
-      render: () => <a>Modificar</a>,
+      width: '10%',
+      
+      render: (_id) => <a onClick={() => {handleEdit(_id)}}>Modificar</a>,
+    
     },
     {
       title: 'Borrar Comics',

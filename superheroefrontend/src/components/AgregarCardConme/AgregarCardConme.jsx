@@ -4,11 +4,13 @@ import axios from "axios";
 import './AgregarCardConme.css'
 
 export default function AddCardConme() {
-  const [imagen, setImagen] = useState("");
+  const [picture, setPicture] = useState("");
   const [titulo, setTitulo] = useState("");
-  const [descripcion, setDescripcion] = useState("");
   const [fecha, setFecha] = useState("");
-  const [likes, setLikes] = useState("");
+  const [autor, setAutor] = useState("");
+  const [descripcion1, setDescripcion1] = useState("");
+  const [descripcion2, setDescripcion2] = useState("");
+  const [resumen, setResumen] = useState("");
 
   const [loading, setLoading] = useState(false);
   const [respuestaMensaje, setRespuestaMensaje] = useState("");
@@ -18,11 +20,14 @@ export default function AddCardConme() {
       e.preventDefault();
       setLoading(true);
       const payload = new FormData();
-      payload.append("imagen", imagen);
+      payload.append("imagen", picture[0]);
+      payload.append("imagen", picture[1]);
       payload.append("titulo", titulo.toString());
-      payload.append("descripcion", descripcion.toString());
       payload.append("fecha", fecha.toString());
-      payload.append("likes", likes.toString());
+      payload.append("autor", autor.toString());
+      payload.append("descripcion1", descripcion1.toString());
+      payload.append("descripcion2", descripcion2.toString());
+      payload.append("resumen", resumen.toString());
 
 
 
@@ -30,7 +35,7 @@ export default function AddCardConme() {
 
 
       const response = await axios.post(
-        'http://localhost:3000/tarjetaConmemorativa/',
+        'http://localhost:3000/articuloComicsConme',
         payload
       );
       setRespuestaMensaje(response.data.mensaje);
@@ -42,10 +47,10 @@ export default function AddCardConme() {
   };
 
   const handlePicture = (e) => {
-    setImagen(e.target.files[0]);
+    setPicture(e.target.files);
   };
 
-  const imageURL = imagen && URL.createObjectURL(imagen);
+  // const imageURL = imagen && URL.createObjectURL(imagen);
 
   return (
     <div>
@@ -62,9 +67,10 @@ export default function AddCardConme() {
         className='FormularioAgregar'
         onSubmit={handleSubmit}>
           <label >Agregar Imagen</label>
-            {imagen && <img src={imageURL} style={{ width: 200 }} />}
+            {/* {imagen && <img src={imageURL} style={{ width: 200 }} />} */}
           <input
           type="file"
+          multiple
           onChange={handlePicture}
         />
         <br></br>
@@ -76,15 +82,6 @@ export default function AddCardConme() {
           required
         />
         <br></br>
-        <label>Descripcion</label>
-        <textarea
-          type="text"
-          value={descripcion}
-          onChange={(e) => setDescripcion(e.target.value)}
-          placeholder="Texto Descriptivo"
-          required
-        ></textarea>
-        <br></br>
         <label >Fecha</label>
         <input
           type="text"
@@ -93,13 +90,38 @@ export default function AddCardConme() {
           required
         />
         <br></br>
-        <label >Likes</label>
-            <input
-          type="text"
-          value={likes}
-          onChange={(e) => setLikes(e.target.value)}
-          required
-        />
+        <label >Autor</label>
+          <input
+            type="text"
+            value={autor}
+            onChange={(e) => setAutor(e.target.value)}
+            required
+          />
+
+<br></br>
+          <label >Texto Resumido</label>
+          <textarea
+            type="text"
+            value={resumen}
+            onChange={(e) => setResumen(e.target.value)}
+            required
+          ></textarea>
+<br></br>
+<label>Texto Principal</label>
+          <textarea
+            type="text"
+            value={descripcion1}
+            onChange={(e) => setDescripcion1(e.target.value)}
+            required
+          ></textarea>
+            <br></br>
+          <label>Texto Secundario</label>
+          <textarea
+            type="text"
+            value={descripcion2}
+            onChange={(e) => setDescripcion2(e.target.value)}
+            required
+          ></textarea>
         <br></br>
  
         {loading ? (

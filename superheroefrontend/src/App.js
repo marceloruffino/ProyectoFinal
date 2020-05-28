@@ -68,7 +68,7 @@ export default function App() {
         <Route path="/agregarnoticia">
           <AgregarNoticia />
           </Route>
-        <Route path="/editarcomics">
+        <Route path="/editarcomics/:id">
           <EditarComics />
           </Route>
         <Route path="/administrarcomics">

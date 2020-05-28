@@ -23,23 +23,23 @@ import NoticiaResumida from '../components/NoticiaResumida/NoticiaResumida';
 function App() {
   return (
 
-<>
-  
+    <>
+
 
       <div className='TituloFanzineZone'>
         <TituloFanzine />
       </div >
-<div className='textoTituloNoticias' >
-<h2 >
+      <div className='textoTituloNoticias' >
+        <h2 >
           Noticias
             </h2>
-</div>
+      </div>
 
       <div className='NoticiaResumida' >
-            <div >
-            <NoticiaResumida />
-            </div>
-           
+        <div >
+          <NoticiaResumida />
+        </div>
+
       </div>
       <div  >
         <img className='img-fluid' src={Divisorio} alt="" style={{ background: '#def2fe' }} />
@@ -47,9 +47,10 @@ function App() {
       <div className='fondoDcVsMarvel'>
         <h2 className='tituloDcVsMarvel'>
           Marvel Vs. Dc
-                </h2>
-        <p className='textoDcVsMarvel'>Marvel Comics versus DC fue un crossover de miniserie de cómics publicado por DC Comics y Marvel Comics de abril a mayo de 1996. La serie fue escrita por Ron Marz y Peter David, con arte de Dan Jurgens y Claudio Castellini. [2]
-La serie crossover especial enfrentó a los superhéroes de Marvel Comics contra sus contrapartes de DC en la batalla. El resultado de cada batalla fue determinado por la votación del lector, que se distribuyó por adelantado a las tiendas de cómics.</p>
+          </h2>
+        <p className='textoDcVsMarvel' style={{borderBottom: '1px solid'}}>Marvel Comics versus DC fue un crossover de miniserie de cómics publicado por DC Comics y Marvel Comics de abril a mayo de 1996. La serie fue escrita por Ron Marz y Peter David, con arte de Dan Jurgens y Claudio Castellini. [2]
+        La serie crossover especial enfrentó a los superhéroes de Marvel Comics contra sus contrapartes de DC en la batalla. El resultado de cada batalla fue determinado por la votación del lector, que se distribuyó por adelantado a las tiendas de cómics.
+        </p>
       </div>
       <div style={{ background: 'black' }}>
         <div >
@@ -76,22 +77,26 @@ La serie crossover especial enfrentó a los superhéroes de Marvel Comics contra
           </Player>
         </div>
         <div className='fondoDcVsMarvel'>
-          <h2 className='tituloDcVsMarvel'>
+          <h2 className='tituloDcVsMarvel' >
             Nuestros Comics Conmemorativos
-                </h2>
-          <p className='textoDcVsMarvel'>Dos Hermanos divinos que personifican los universos DC y Marvel cada uno se dan cuenta de la existencia del otro y se desafían entre sí a una serie de duelos que involucran a los respectivos superhéroes de cada universo. El universo perdedor dejaría de existir. La historia tenía un componente "fuera del universo" en que los resultados de las batallas primarias estaban determinados por los votos de los lectores.</p>
-        </div>
+          </h2>
+          <p className='textoDcVsMarvel' style={{borderBottom: '1px solid', marginBottom: '1px'}}>Dos Hermanos divinos que personifican los universos DC y Marvel cada uno se dan cuenta de la existencia del otro y se desafían entre sí a una serie de duelos que involucran a los respectivos superhéroes de cada universo. El universo perdedor dejaría de existir. La historia tenía un componente "fuera del universo" en que los resultados 
+          de las batallas primarias estaban determinados por los votos de los lectores.
+          </p>
+          </div>
+        
+
         <div className='CardsConmemorativos'>
-          
-            <TarjetaConmemorativa />
-          
+
+          <TarjetaConmemorativa />
+
         </div>
         <div >
           <img className='img-fluid' src={Pie} alt="" style={{ background: 'black' }} />
         </div>
 
       </div>
-   </>
+    </>
 
   );
 }

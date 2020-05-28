@@ -29,7 +29,7 @@ export default function Footer() {
                             </div>
                             <div className="col-md-6 item text">
                                 <h3>Super Heroe</h3>
-                                <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                                <p>Nuestra tienda, creada para suplir a los mas exigentes lectores, fans de comics, locos por sus novedades y materiales ineditos. Una cadena dependiente de Dc y Marvel Nueva york.</p>
                             </div>
                             <div className="col item social">
                                 <a href="#">

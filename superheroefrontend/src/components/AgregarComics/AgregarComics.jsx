@@ -23,7 +23,8 @@ export default function AddList() {
       e.preventDefault();
       setLoading(true);
       const payload = new FormData();
-      payload.append("imagen", picture);
+      payload.append("imagen", picture[0]);
+      payload.append("imagen", picture[1]);
       payload.append("titulo", titulo.toString());
       payload.append("fecha", fecha.toString());
       payload.append("autor", autor.toString());
@@ -51,10 +52,10 @@ export default function AddList() {
   };
 
   const handlePicture = (e) => {
-    setPicture(e.target.files[0]);
+    setPicture(e.target.files);
   };
 
-  const imageURL = picture && URL.createObjectURL(picture);
+  // const imageURL = picture && URL.createObjectURL(picture);
 
   return (
     <div>
@@ -71,7 +72,7 @@ export default function AddList() {
           className='FormularioAgregar'
           onSubmit={handleSubmit}>
           <label >Agregar Imagen</label>
-          {picture && <img src={imageURL} style={{ width: 200 }} />}
+          {/* {picture && <img src={imageURL} style={{ width: 200 }} />} */}
           <input
             type="file"
             multiple
@@ -94,7 +95,6 @@ export default function AddList() {
             onChange={(e) => setFecha(e.target.value)}
             required
           />
-          <br></br>
           <br></br>
           <label >Autor</label>
           <input

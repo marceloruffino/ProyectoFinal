@@ -11,13 +11,13 @@ export default function ArticuloComics() {
     const { id } = useParams();
     console.log("Noticias -> id", id)
     
-    const [titulo, setTitulo] = useState('');
-    const [fecha, setFecha] = useState('');
-    const [autor, setAutor] = useState('');
-    const [imagen, setImagen] = useState('');
-    const [imagen2, setImagen2] = useState('');
-    const [descripcion1, setDescripcion1] = useState('');
-    const [descripcion2, setDescripcion2] = useState('');
+    const [titulo, setTitulo] = useState("");
+    const [fecha, setFecha] = useState("");
+    const [autor, setAutor] = useState("");
+    const [imagen, setImagen] = useState("");
+    const [imagen2, setImagen2] = useState("");
+    const [descripcion1, setDescripcion1] = useState("");
+    const [descripcion2, setDescripcion2] = useState("");
 
     // const [respuestanoticia, setRespuestaNoticia] = useState([]);
     // console.log(respuestanoticia);

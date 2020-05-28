@@ -107,9 +107,13 @@ const newArticuloComics = async (req, res) => {
 
 router.post("/", upload.array('imagen', 2), newArticuloComics)
 
-router.put("/:id", async(req, res) => {
+router.put("/:id",upload.array('imagen', 2), async(req, res) => {
   const id = req.params.id;
+  const urlImage = 'http://localhost:3000/imagenesComics/' + req.files[0].filename
+  const urlImage2 = 'http://localhost:3000/imagenesComics/' + req.files[1].filename
   const articuloComicsModificada = req.body;
+  articuloComicsModificada.imagen=urlImage
+  articuloComicsModificada['imagen2']=urlImage2
   try {
     const respuesta =  await ArticuloComicsModel.findByIdAndUpdate(id,articuloComicsModificada);
     res.json({ mensaje: "Articulo Comics modificado", articuloComics: respuesta });

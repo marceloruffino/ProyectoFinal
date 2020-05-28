@@ -47,8 +47,8 @@ export default function TarjetaConmemorativa() {
                     <figcaption>
                         <div className="date"><span className="day">{respuesta.fecha}</span><span className="month">Ene</span></div>
                         <h3>{respuesta.titulo}</h3>
-                        <p>
-                            {respuesta.descripcion}
+                        <p >
+                            {respuesta.resumen}
                         </p>
                     </figcaption>
                     <footer>
