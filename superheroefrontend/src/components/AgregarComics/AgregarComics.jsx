@@ -1,11 +1,12 @@
 //@ts-check
 import React, { useState } from 'react';
 import axios from "axios";
-import { Link } from "react-router-dom";
 import './AdminCards.css'
 
 export default function AddList() {
   const [picture, setPicture] = useState("");
+  const [imagen, setImagen] = useState("");
+  const [imagen2, setImagen2] = useState("");
   const [titulo, setTitulo] = useState("");
   const [fecha, setFecha] = useState("");
   const [autor, setAutor] = useState("");
@@ -34,11 +35,6 @@ export default function AddList() {
       payload.append("cantidad", cantidad.toString());
       payload.append("precio", precio.toString());
 
-
-
-
-
-
       const response = await axios.post(
         'http://localhost:3000/articuloComics',
         payload
@@ -55,7 +51,8 @@ export default function AddList() {
     setPicture(e.target.files);
   };
 
-  // const imageURL = picture && URL.createObjectURL(picture);
+  const imageURL = imagen || (picture && URL.createObjectURL(picture[0]));
+  const imageURL2 = imagen2 || (picture && URL.createObjectURL(picture[1]));
 
   return (
     <div>
@@ -72,7 +69,8 @@ export default function AddList() {
           className='FormularioAgregar'
           onSubmit={handleSubmit}>
           <label >Agregar Imagen</label>
-          {/* {picture && <img src={imageURL} style={{ width: 200 }} />} */}
+          <img src={imageURL} style={{ width: 200 }} />
+            <img src={imageURL2} style={{ width: 200 }} />
           <input
             type="file"
             multiple

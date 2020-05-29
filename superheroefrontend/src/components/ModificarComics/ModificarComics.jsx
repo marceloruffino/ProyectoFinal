@@ -17,17 +17,18 @@ const TablaComics = () => {
   const [searchedColumn, setSearchedColumn] = useState('')
   const searchInput = useRef()
   console.log(respuestacomics);
+
+  const getlistadodecomics = async () => {
+    axios.get('http://localhost:3000/articuloComics')
+      .then((res) => {
+        console.log(res.data);
+        setRespuestacomics(res.data.articuloComics)
+      })
+      .catch((error) => {
+        console.log(error.data);
+      })
+  }
   useEffect(() => {
-    const getlistadodecomics = async () => {
-      axios.get('http://localhost:3000/articuloComics')
-        .then((res) => {
-          console.log(res.data);
-          setRespuestacomics(res.data.articuloComics)
-        })
-        .catch((error) => {
-          console.log(error.data);
-        })
-    }
     getlistadodecomics();
   }, [])
 
@@ -97,9 +98,19 @@ const TablaComics = () => {
     setSearchText('')
   };
   const handleEdit = (id) => {
-  console.log("handleEdit -> id", id)
-    
+    console.log("handleEdit -> id", id)
+
     history.push(`/editarcomics/${id}`)
+  };
+  const handleDelete = (id) => {
+    axios.delete(`http://localhost:3000/articuloComics/${id}`)
+      .then(() => {
+        getlistadodecomics();
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+
   };
 
   const columns = [
@@ -116,8 +127,8 @@ const TablaComics = () => {
       key: 'imagen',
       width: '10%',
       // ...getColumnSearchProps('imagen'),
-      render: (imagen) =>{
-        return <img src={imagen} alt="" style={{maxWidth: '150px'}}/>
+      render: (imagen) => {
+        return <img src={imagen} alt="" style={{ maxWidth: '150px' }} />
       }
     },
     {
@@ -134,7 +145,7 @@ const TablaComics = () => {
       width: '10%',
       ...getColumnSearchProps('fecha'),
     },
- 
+
     {
       title: 'Texto 1',
       dataIndex: 'descripcion1',
@@ -147,8 +158,8 @@ const TablaComics = () => {
       dataIndex: 'imagen2',
       key: 'imagen2',
       width: '10%',
-      render: (imagen2) =>{
-        return <img src={imagen2} alt="" style={{maxWidth: '150px'}}/>
+      render: (imagen2) => {
+        return <img src={imagen2} alt="" style={{ maxWidth: '150px' }} />
       }
     },
     {
@@ -177,19 +188,19 @@ const TablaComics = () => {
       dataIndex: '_id',
       key: 'x',
       width: '10%',
-      
-      render: (_id) => <a onClick={() => {handleEdit(_id)}}>Modificar</a>,
-    
+
+      render: (_id) => <a onClick={() => { handleEdit(_id) }}>Modificar</a>,
+
     },
     {
       title: 'Borrar Comics',
-      dataIndex: '',
+      dataIndex: '_id',
       key: 'x',
-      render: () => <a>Borrar</a>,
+      render: (_id) => <a onClick={() => { handleDelete(_id) }}>Borrar</a>,
 
     },
   ];
-  return <Table columns={columns} dataSource={data} scroll={{x:800}}/>;
+  return <Table columns={columns} dataSource={data} scroll={{ x: 800 }} />;
 }
 
 export default TablaComics;

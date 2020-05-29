@@ -3,21 +3,10 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const ObjectID = mongoose.Types.ObjectId;
-const multer = require('multer');
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, './imagenesRegistro')
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + '-' + file.originalname)
-  }
-})
 
-var upload = multer({ storage: storage })
 
 const RegistroSchema = new Schema({
   _id: ObjectID,
-  imagen: String,
   nombre: {
     type: String,
   },
@@ -72,20 +61,16 @@ router.get("/:id", async (req, res) => {
 
 const newRegistro = async (req, res) => {
   try {
-    const urlImage = 'http://localhost:3000/imagenesRegistro/' + req.file.filename
     const registroNuevo = new RegistroModel({
       _id: new ObjectID(),
-      imagen: urlImage,
       nombre: req.body.nombre,
       apellido: req.body.apellido,
-      sexo: req.body.sexo,
-      fechaNacimiento: req.body.fechaNacimiento,
-      direccion: req.body.direccion,
-      provincia: req.body.provincia,
-      codigoPostal: req.body.codigoPostal,
-      telefono: req.body.telefono,
       email: req.body.email,
-      newsLetter: req.body.newsLetter
+      dcComics: req.body.dcComics,
+      marvelComics: req.body.marvelComics,
+      horseComics: req.body.horseComics,
+      imageComics: req.body.imageComics,
+      newsLetter: req.body.newsLetter,
     });
     const respuesta = await registroNuevo.save();
     res.json({ mensaje: "registro nuevo creado", registro: respuesta });
@@ -96,7 +81,7 @@ const newRegistro = async (req, res) => {
   }
 };
 
-router.post("/", upload.single('imagen'), newRegistro)
+router.post("/", newRegistro)
 
 router.put("/:id", async (req, res) => {
   const id = req.params.id;

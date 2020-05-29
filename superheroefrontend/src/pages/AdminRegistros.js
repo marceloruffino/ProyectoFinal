@@ -1,15 +1,10 @@
 //@ts-check
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import TablaRegistro from '../components/TablaRegistro/TablaRegistro';
 import '../components/TablaRegistro/TablaRegistro.css';
 import '../components/AgregarComics/AdminCards.css'
 import { Button } from 'antd';
 import { RollbackOutlined } from '@ant-design/icons';
-import {
-  Form,
-  Input,
-
-} from 'antd';
 import { Link } from 'react-router-dom';
 import Pie from '../components/FanzineZoneHome/fotoFanzineHome/Pie.png';
 
