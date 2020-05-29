@@ -14,7 +14,8 @@ const TablaRegistro = () => {
   const [searchedColumn, setSearchedColumn] = useState('')
   const searchInput = useRef()
   console.log(respuestaregistro);
-  useEffect(() => {
+
+  
     const getlistadoderegistro = async () => {
       axios.get('http://localhost:3000/Registro/')
         .then((res) => {
@@ -25,6 +26,7 @@ const TablaRegistro = () => {
           console.log(error.data);
         })
     }
+    useEffect(() => {
     getlistadoderegistro();
   }, [])
 
@@ -92,6 +94,16 @@ const TablaRegistro = () => {
   const handleReset = clearFilters => {
     clearFilters();
     setSearchText('')
+  };
+  const handleDelete = (id) => {
+    axios.delete(`http://localhost:3000/Registro/${id}`)
+      .then(() => {
+        getlistadoderegistro();
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+
   };
 
   const columns = [
@@ -164,9 +176,9 @@ const TablaRegistro = () => {
  
     {
       title: 'Borrar Registro',
-      dataIndex: '',
+      dataIndex: '_id',
       key: 'x',
-      render: () => <a>Borrar</a>,
+      render: (_id) => <a onClick={() => { handleDelete(_id) }}>Borrar</a>,
 
     },
     
