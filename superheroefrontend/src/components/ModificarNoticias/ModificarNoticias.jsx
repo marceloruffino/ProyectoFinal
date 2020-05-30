@@ -7,25 +7,30 @@ import 'antd/dist/antd.css';
 import { Table, Input, Button, Space } from 'antd';
 import Highlighter from 'react-highlight-words';
 import { SearchOutlined } from '@ant-design/icons';
+import { useHistory } from 'react-router-dom';
 
 const TablaNoticias = () => {
+  const history = useHistory();
+
   const [respuestacomics, setRespuestacomics] = useState([]);
   const [searchText, setSearchText] = useState('')
   const [searchedColumn, setSearchedColumn] = useState('')
   const searchInput = useRef()
+
   console.log(respuestacomics);
+
+  const getlistadoarticulos = async () => {
+    axios.get('http://localhost:3000/articuloFanzine')
+      .then((res) => {
+        console.log(res.data);
+        setRespuestacomics(res.data.articuloFanzine)
+      })
+      .catch((error) => {
+        console.log(error.data);
+      })
+  }
   useEffect(() => {
-    const getlistadodecomics = async () => {
-      axios.get('http://localhost:3000/articuloFanzine')
-        .then((res) => {
-          console.log(res.data);
-          setRespuestacomics(res.data.articuloFanzine)
-        })
-        .catch((error) => {
-          console.log(error.data);
-        })
-    }
-    getlistadodecomics();
+    getlistadoarticulos();
   }, [])
 
 
@@ -93,6 +98,21 @@ const TablaNoticias = () => {
     clearFilters();
     setSearchText('')
   };
+  const handleEdit = (id) => {
+    console.log("handleEdit -> id", id)
+
+    history.push(`/editarnoticias/${id}`)
+  };
+  const handleDelete = (id) => {
+    axios.delete(`http://localhost:3000/articuloFanzine/${id}`)
+      .then(() => {
+        getlistadoarticulos();
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+
+  };
 
   const columns = [
     {
@@ -122,15 +142,15 @@ const TablaNoticias = () => {
       key: 'imagen',
       width: '3%',
       // ...getColumnSearchProps('imagen'),
-      render: (imagen) =>{
-        return <img src={imagen} alt="" style={{maxWidth: '150px'}}/>
+      render: (imagen) => {
+        return <img src={imagen} alt="" style={{ maxWidth: '150px' }} />
       }
     },
     {
       title: 'Descripcion 1',
       dataIndex: 'descripcion1',
       key: 'descripcion1',
-      width: '5%',
+      width: '30%',
       ...getColumnSearchProps('descripcion1'),
     },
     {
@@ -139,35 +159,37 @@ const TablaNoticias = () => {
       key: 'imagen2',
       width: '3%',
       // ...getColumnSearchProps('imagen'),
-      render: (imagen) =>{
-        return <img src={imagen} alt="" style={{maxWidth: '150px'}}/>
+      render: (imagen) => {
+        return <img src={imagen} alt="" style={{ maxWidth: '150px' }} />
       }
     },
     {
       title: 'Descripcion 2',
       dataIndex: 'descripcion2',
       key: 'descripcion2',
-      width: '5%',
+      width: '30%',
       ...getColumnSearchProps('descripcion2'),
     },
     {
       title: 'Resumen',
       dataIndex: 'resumen',
       key: 'resumen',
-      width: '5%',
+      width: '10%',
       ...getColumnSearchProps('resumen'),
     },
     {
       title: 'Modificar Noticia',
-      dataIndex: '',
+      dataIndex: '_id',
+      width: '3%',
       key: 'x',
-      render: () => <a>Modificar</a>,
+      render: (_id) => <a onClick={() => { handleEdit(_id) }}>Modificar</a>,
     },
     {
       title: 'Borrar Noticia',
-      dataIndex: '',
+      dataIndex: '_id',
+      width: '3%',
       key: 'x',
-      render: () => <a>BOrrar</a>,
+      render: (_id) => <a onClick={() => { handleDelete(_id) }}>Borrar</a>,
 
     },
   ];

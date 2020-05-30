@@ -124,6 +124,18 @@ router.put("/:id",upload.array('imagen', 2), async(req, res) => {
   }
 });
 
+router.put("/likes/:id", async(req, res) => {
+  const id = req.params.id;
+  const articuloComicsModificada = req.body;
+  
+  try {
+    const respuesta =  await ArticuloComicsModel.findByIdAndUpdate(id,articuloComicsModificada);
+    res.json({ mensaje: "Articulo Comics modificado", articuloComics: respuesta });
+  } catch (error) {
+    res.status(500).json({ mensaje: "error", tipo: error });
+  }
+});
+
 // BORRAR SOLO UN ARCHIVO
 
 router.delete("/:id", async(req, res) => {

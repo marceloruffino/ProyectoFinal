@@ -1,9 +1,11 @@
 //@ts-check
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
-import './AdminCards.css'
+import { Link, useParams } from "react-router-dom";
+import './EditarNoticias.css'
 
-export default function AddList() {
+export default function EditNews() {
+  const { id } = useParams();
   const [picture, setPicture] = useState("");
   const [imagen, setImagen] = useState("");
   const [imagen2, setImagen2] = useState("");
@@ -13,30 +15,49 @@ export default function AddList() {
   const [descripcion1, setDescripcion1] = useState("");
   const [descripcion2, setDescripcion2] = useState("");
   const [resumen, setResumen] = useState("");
-  const [cantidad, setCantidad] = useState(false);
-  const [precio, setPrecio] = useState(false);
 
   const [loading, setLoading] = useState(false);
   const [respuestaMensaje, setRespuestaMensaje] = useState("");
+
+  useEffect(() => {
+    const fetchNoticias = async (e) => {
+      try {
+        const response = await axios.get(
+          `http://localhost:3000/articuloFanzine/${id}`
+        );
+        const { imagen, imagen2, titulo, fecha, autor, descripcion1, descripcion2, resumen } = response.data.articuloFanzine;
+        setImagen(imagen)
+        setImagen2(imagen2)
+        setTitulo(titulo)
+        setFecha(fecha)
+        setAutor(autor)
+        setDescripcion1(descripcion1)
+        setDescripcion2(descripcion2)
+        setResumen(resumen)
+      } catch (error) {
+        console.log("fetchNoticias -> error", error)
+      }
+    };
+    fetchNoticias();
+  }, []);
+
 
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
       setLoading(true);
       const payload = new FormData();
-      payload.append("imagen", picture[0]);
-      payload.append("imagen", picture[1]);
+      picture && picture[0] && payload.append("imagen", picture[0]);
+      picture && picture[1] && payload.append("imagen", picture[1]);
       payload.append("titulo", titulo.toString());
       payload.append("fecha", fecha.toString());
       payload.append("autor", autor.toString());
       payload.append("descripcion1", descripcion1.toString());
       payload.append("descripcion2", descripcion2.toString());
       payload.append("resumen", resumen.toString());
-      payload.append("cantidad", cantidad.toString());
-      payload.append("precio", precio.toString());
 
-      const response = await axios.post(
-        'http://localhost:3000/articuloComics',
+      const response = await axios.put(
+        `http://localhost:3000/articuloFanzine/${id}`,
         payload
       );
       setRespuestaMensaje(response.data.mensaje);
@@ -49,6 +70,8 @@ export default function AddList() {
 
   const handlePicture = (e) => {
     setPicture(e.target.files);
+    setImagen('')
+    setImagen2('')
   };
 
   const imageURL = imagen || (picture && URL.createObjectURL(picture[0]));
@@ -56,23 +79,16 @@ export default function AddList() {
 
   return (
     <div>
-      <div className='TituloAdministrar'>
-        <h2>
-          Agregar Comics
-                </h2>
-      </div>
-      <div>
-
-      </div>
       <div >
         <form
           className='FormularioAgregar'
           onSubmit={handleSubmit}>
-          <label >Agregar Imagen</label>
+          <label >Imagenes</label>
           <div style={{ display: 'flex', padding: '5px' }}>
-          <img src={imageURL} style={{ width: 200 }} />
+
+            <img src={imageURL} style={{ width: 200 }} />
             <img src={imageURL2} style={{ width: 200 }} />
-            </div>
+          </div>
           <input
             type="file"
             multiple
@@ -84,7 +100,7 @@ export default function AddList() {
             type="text"
             value={titulo}
             onChange={(e) => setTitulo(e.target.value)}
-            required
+
           />
           <br></br>
 
@@ -93,7 +109,7 @@ export default function AddList() {
             type="text"
             value={fecha}
             onChange={(e) => setFecha(e.target.value)}
-            required
+
           />
           <br></br>
           <label >Autor</label>
@@ -101,15 +117,15 @@ export default function AddList() {
             type="text"
             value={autor}
             onChange={(e) => setAutor(e.target.value)}
-            required
+
           />
-            <br></br>
+          <br></br>
           <label >Texto Resumido</label>
           <textarea
             type="text"
             value={resumen}
             onChange={(e) => setResumen(e.target.value)}
-            required
+
           ></textarea>
 
           <label>Texto Principal</label>
@@ -117,41 +133,22 @@ export default function AddList() {
             type="text"
             value={descripcion1}
             onChange={(e) => setDescripcion1(e.target.value)}
-            required
+
           ></textarea>
-             <br></br>
+          <br></br>
           <label>Texto Secundario</label>
           <textarea
             type="text"
             value={descripcion2}
             onChange={(e) => setDescripcion2(e.target.value)}
-            required
           ></textarea>
-         
-      
-          <br></br>
-          <label >Cantidad</label>
-          <input
-            type="number"
-            value={cantidad}
-            onChange={(e) => setCantidad(e.target.value)}
-            required
-          />
-          <br></br>
-          <label >Precio</label>
-          <input
-            type="number"
-            value={precio}
-            onChange={(e) => setPrecio(e.target.value)}
-            required
-          />
           <br></br>
 
           {loading ? (
             <span >Loading...</span>
           ) : (
               <button className=" bg-blue-700 rounded p-2" type="submit">
-                Agregar
+                Modificar
               </button>
             )}
           <p className="text-white">{respuestaMensaje}</p>

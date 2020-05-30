@@ -11,8 +11,10 @@ export default function HeartLikes({initialValue, idComics}) {
 
 
   const handlelikes = (id) => {
+  console.log("handlelikes -> id", id)
+    
     const likestotales = likes + 1
-    axios.put(`http://localhost:3000/articuloComics/${idComics}`, {
+    axios.put(`http://localhost:3000/articuloComics/likes/${idComics}`, {
       likes: likestotales
 
     })
@@ -24,8 +26,10 @@ export default function HeartLikes({initialValue, idComics}) {
   };
 
   const handledislikes = (id) => {
+  console.log("handledislikes -> id", id)
+    
     const likestotales = likes - 1
-    axios.put(`http://localhost:3000/articuloComics/${idComics}`, {
+    axios.put(`http://localhost:3000/articuloComics/likes/${idComics}`, {
       likes: likestotales
 
     })

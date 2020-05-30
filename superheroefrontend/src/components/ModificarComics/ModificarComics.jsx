@@ -16,6 +16,7 @@ const TablaComics = () => {
   const [searchText, setSearchText] = useState('')
   const [searchedColumn, setSearchedColumn] = useState('')
   const searchInput = useRef()
+  
   console.log(respuestacomics);
 
   const getlistadodecomics = async () => {
@@ -200,7 +201,7 @@ const TablaComics = () => {
 
     },
   ];
-  return <Table columns={columns} dataSource={data} scroll={{ x: 800 }} />;
+  return <Table columns={columns} dataSource={data} />;
 }
 
 export default TablaComics;
